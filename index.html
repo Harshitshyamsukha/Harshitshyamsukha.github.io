@@ -44,10 +44,59 @@
 
       /* Cursor & Particles */
       #cursor-dot, #cursor-ring { position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); }
-      #cursor-dot { width: 6px; height: 6px; background: var(--teal-2); transition: transform .1s; }
-      #cursor-ring { width: 32px; height: 32px; border: 1.5px solid var(--teal); opacity: 0.5; transition: transform .18s, width .2s, height .2s; }
+      /* Custom "hs" Cursor */
+/* The Inverting Glass Cube Cursor */
+      #cursor-dot { 
+        width: 16px; 
+        height: 16px; 
+        
+        /* White base with 80% opacity for the transparency effect */
+        background: rgba(255, 255, 255, 0.8); 
+        
+        /* THE MAGIC: Inverts the colors of whatever is underneath it */
+        mix-blend-mode: difference; 
+        
+        /* Kept the subtle 3D edges so it remains a cube */
+        border-top: 2px solid rgba(255, 255, 255, 0.6); 
+        border-left: 2px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.4); 
+        border-right: 2px solid rgba(0, 0, 0, 0.4);
+        
+        transform: translate(-50%, -50%); 
+        transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
+        pointer-events: none; /* Crucial so it doesn't block clicks */
+        z-index: 9999;
+      }
+
+      /* Hover state: Expands and becomes more transparent over clickable items */
+      a:hover ~ #cursor-dot, button:hover ~ #cursor-dot {
+        width: 28px;
+        height: 28px;
+        background: rgba(255, 255, 255, 0.3); /* Drops to 30% opacity */
+        border-radius: 50%; /* Optional: Morph into a circle on hover! Remove if you want it to stay a cube */
+      }
+
+      /* Keep the ring hidden */
+      #cursor-ring {
+        display: none !important;
+      }
+
       #particle-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5; }
-      
+      /* 1. Force hide the default cursor EVERYWHERE (even on buttons and links) */
+      *, a, button, input, textarea, select {
+        cursor: none !important;
+      }
+
+      /* 2. Kill the custom cursor on touch devices and mobile screens */
+      @media (hover: none) and (pointer: coarse), (max-width: 768px) {
+        #cursor-dot {
+          display: none !important; /* Hides your green cube */
+        }
+        /* Restore standard touch/scroll behavior for phones */
+        *, a, button, input, textarea, select {
+          cursor: auto !important; 
+        }
+      }
       /* Nav */
       nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; background: rgba(10,15,30,0.7); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); transition: background var(--transition); }
       [data-theme="light"] nav { background: rgba(240,244,250,0.8); }
@@ -170,8 +219,8 @@
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-Cqw_WJTw.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DPtWl2Nh.css">
+    <script type="module" crossorigin src="/assets/index-BqmEJB29.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CU4Ii31Q.css">
   </head>
   <body>
     <div id="cursor-dot"></div>
