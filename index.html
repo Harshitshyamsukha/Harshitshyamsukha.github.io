@@ -146,7 +146,17 @@
       .stack-tag { font-family: var(--font-mono); font-size: 0.68rem; padding: 3px 9px; border-radius: 4px; background: var(--surface-2); color: var(--teal); border: 1px solid var(--border); margin-right: 6px; }
       
       /* Chat Bubble */
-      #chat-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; width: 340px; border-radius: var(--radius-lg); border: 1px solid var(--border-2); background: var(--navy-2); box-shadow: 0 24px 60px rgba(0,0,0,0.5); transform: scale(0.85) translateY(20px); transform-origin: bottom right; opacity: 0; pointer-events: none; transition: all 0.3s; display: flex; flex-direction: column; }
+      #chat-bubble { 
+        position: fixed; 
+        bottom: 2rem; 
+        right: 2rem; 
+        z-index: 999; /* Increased so it covers the Back to Top button when open */
+        width: 340px; border-radius: var(--radius-lg); 
+        border: 1px solid var(--border-2); background: var(--navy-2); 
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5); 
+        transform: scale(0.85) translateY(20px); transform-origin: bottom right; 
+        opacity: 0; pointer-events: none; transition: all 0.3s; display: flex; flex-direction: column; 
+      }     
       #chat-bubble.open { opacity: 1; pointer-events: all; transform: scale(1) translateY(0); }
       .chat-hdr { background: var(--navy-4); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; color: white; font-weight: 600; font-size: 0.9rem;}
       .chat-messages { padding: 16px; height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
@@ -163,7 +173,10 @@
       .chat-inp-row input { flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); outline: none; }
       .chat-inp-row button { padding: 0 16px; border-radius: 8px; background: var(--teal); color: white; border: none; cursor: pointer; }
       .chat-toggle { 
-        position: fixed; bottom: 2rem; right: 2rem; z-index: 199; 
+        position: fixed; 
+        bottom: 6.5rem; /* Moved up */
+        right: 2rem; 
+        z-index: 1000; /* Ensures it is always clickable */
         width: 64px; height: 64px; border-radius: 50%; 
         background: linear-gradient(135deg, var(--teal), #0F6E56); 
         color: white; border: 1px solid rgba(255,255,255,0.2); 
@@ -188,6 +201,34 @@
         50% { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(29,158,117,0.6); }
         100% { transform: translateY(0px); box-shadow: 0 8px 24px rgba(29,158,117,0.4); }
       }
+      /* --- BACK TO TOP BUTTON --- */
+     .back-to-top {
+        position: fixed;
+        bottom: 2rem;  /* Moved down into the corner */
+        right: 2rem;   
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--navy-3);
+        color: var(--teal);
+        border: 1px solid var(--teal);
+        font-size: 1.5rem;
+        font-weight: bold;
+        z-index: 998; /* Lower than the chat bubble */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background: var(--teal);
+        color: var(--navy-1);
+        box-shadow: 0 0 15px var(--teal-glow);
+        transform: translateY(-3px);
+      }
+
       /* --- BULLETPROOF MOBILE RESPONSIVENESS --- */
       @media (max-width: 768px) {
         /* 1. Prevent horizontal scroll & scaling issues entirely */
@@ -234,8 +275,16 @@
         .timeline::before { display: none; } 
         
         /* 7. Chat Widget sizes perfectly to the phone */
-        .chat-toggle { bottom: 1.2rem; right: 1.2rem; width: 56px; height: 56px; }
-        #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
+        .chat-toggle { 
+          bottom: 5.5rem; /* Chat is higher */
+          right: 1.2rem; 
+          width: 56px; height: 56px; 
+        }
+        #chat-bubble { 
+          width: calc(100vw - 2.4rem); 
+          right: 1.2rem; 
+          bottom: 1.2rem; /* Bubble fills the space starting from the bottom */
+        }
 
         /* 8. Scale down the massive Hero Text so it fits on screen */
         .hero-inner h1, 
@@ -253,9 +302,18 @@
           width: 100% !important;
           box-sizing: border-box;
         }
+
+        /* Resize Back to Top for Mobile */
+        .back-to-top {
+          bottom: 1.2rem; /* Arrow is tucked in the corner */
+          right: 1.2rem;  
+          width: 45px;
+          height: 45px;
+          font-size: 1.2rem;
+        }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-LPtlL4tq.js"></script>
+    <script type="module" crossorigin src="/assets/index-Bnilkxge.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CMy_BH7C.css">
   </head>
   <body>
