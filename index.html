@@ -22,11 +22,42 @@
         --transition: 0.25s cubic-bezier(.4,0,.2,1);
       }
       [data-theme="light"] {
-        --navy: #F0F4FA; --navy-2: #E8EFF8; --navy-3: #DDE6F3; --navy-4: #1A2B4A;
-        --text: #0F1923; --text-muted: #4A5D78; --text-faint: #8FA3B8;
-        --border: rgba(0,0,0,0.08); --border-2: rgba(29,158,117,0.25);
-        --surface: rgba(0,0,0,0.03); --surface-2: rgba(0,0,0,0.06);
-        --teal-glow: rgba(29,158,117,0.1);
+        /* Pastel Creamish Woody Backgrounds */
+        --navy: #F6F0E5;   /* Main background: Soft cream/pale wood */
+        --navy-2: #EAE2D3; /* Secondary: Slightly darker cream for cards/chat */
+        --navy-3: #DED4C1; /* Tertiary: Warmest tone for inputs/borders */
+        --navy-4: #2A241F; /* Dark woody accent for inverted elements */
+        
+        /* High-Contrast Readable Text (Deep Espresso/Charcoal) */
+        --text: #362F29;       /* Main text: Deep, readable brown-grey */
+        --text-muted: #5C5248; /* Secondary text: Medium warm grey */
+        --text-faint: #8B7E72; /* Faint text: Light warm grey */
+        
+        /* Subtle Borders and Surfaces */
+        --border: rgba(92, 82, 72, 0.15); 
+        --border-2: rgba(29, 158, 117, 0.4); /* Stronger teal border for light mode */
+        --surface: rgba(255, 255, 255, 0.4); /* Semi-transparent white for cards */
+        --surface-2: rgba(255, 255, 255, 0.6);
+        --teal-glow: rgba(29, 158, 117, 0.15);
+      }
+      
+      /* Update the Light Mode Navigation bar to match the new cream tone */
+      [data-theme="light"] nav { 
+        background: rgba(246, 240, 229, 0.85); /* Matches the new --navy */
+          border-bottom: 1px solid rgba(92, 82, 72, 0.15); /* Subtle border in light mode */
+      }
+      /* --- GitHub Stats Image Fix for Light Mode --- */
+      [data-theme="light"] img[src*="github"],
+      [data-theme="light"] img[src*="herokuapp"],
+      [data-theme="light"] img[src*="vercel"] {
+        /* Inverts white to dark grey, then rotates the color wheel so green stays green! */
+        filter: invert(0.85) hue-rotate(180deg);
+      }
+      /* --- Particle Canvas Light Mode Fix --- */
+      [data-theme="light"] #particle-canvas {
+        /* Inverts white/light particles to dark grey/brown, and softens them */
+        filter: invert(0.8) saturate(10) cyan(0.5) sepia(0.2) red(0.8) blue(0.8) hue-rotate(-30deg);
+        opacity: 8; /* Brings particles back to full visibility in light mode */
       }
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
@@ -105,6 +136,27 @@
       .nav-links a { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.03em; transition: color var(--transition); }
       .nav-links a:hover { color: var(--teal-2); }
       .nav-links a span { color: var(--teal); margin-right: 3px; }
+      /* Nav Contact Button */
+      .nav-contact-btn {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--teal) !important;
+        border: 1px solid var(--border-2);
+        padding: 6px 16px;
+        border-radius: var(--radius);
+        background: var(--surface);
+        transition: all var(--transition);
+        display: inline-flex;
+        align-items: center;
+      }
+      
+      .nav-contact-btn:hover {
+        background: var(--teal-glow);
+        border-color: var(--teal);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(29, 158, 117, 0.2);
+      }
       .theme-btn { width: 38px; height: 22px; border-radius: 11px; border: 1px solid var(--border-2); background: var(--surface-2); cursor: pointer; position: relative; transition: background var(--transition); }
       .theme-btn::after { content: ''; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--teal-2); transition: transform var(--transition); }
       [data-theme="light"] .theme-btn::after { transform: translateX(16px); }
@@ -229,6 +281,50 @@
         transform: translateY(-3px);
       }
 
+/* --- DESKTOP HERO FIX (Move Terminal Up & Prevent Overlap) --- */
+      @media (min-width: 769px) {
+        .hero-inner {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2rem; 
+        }
+        
+        /* Stop the text container from taking over the screen */
+        .hero-inner > div:first-child {
+          flex: 1.2;
+        }
+
+        /* Slightly scale down the massive name so it fits next to the terminal */
+        .hero-name {
+          font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+        }
+
+        .terminal-wrap {
+          position: relative !important;
+          margin: 0 !important;
+          margin-top: -30rem !important; 
+          margin-left: -20rem !important; /* Pushes the terminal away from the text */
+          transform: flex !important; 
+          flex: 1;
+          max-width: 450px; /* Keeps the terminal sleek and compact */
+        }
+      }
+
+      /* Protect the terminal text colors in Light Mode */
+      .terminal-body, 
+      .terminal-body p, 
+      .terminal-body div, 
+      .terminal-body span {
+        color: #E2E8F0 !important;
+      }
+      .t-prompt { color: #7EC8E3 !important; } 
+      .t-cmd { color: #E8EDF5 !important; } 
+      .t-out { color: #98C379 !important; } 
+      .t-dim { color: #3D4F62 !important; }
+      span.text-teal { color: #1D9E75 !important; }
+
       /* --- BULLETPROOF MOBILE RESPONSIVENESS --- */
       @media (max-width: 768px) {
         /* 1. Prevent horizontal scroll & scaling issues entirely */
@@ -259,6 +355,12 @@
         .nav-links { margin-top: 2rem; width: 100%; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         .nav-links a { font-size: 0.75rem; }
         .nav-links a span { display: none; } /* Hides numbers to save space */
+        /* Mobile Nav Contact Button */
+        .nav-contact-btn {
+          padding: 5px 12px;
+          font-size: 0.7rem;
+          margin-left: 0.5rem;
+        }
         
         /* 5. Hero & Sections stack and center */
         #hero { padding-top: 7rem !important; }
@@ -313,8 +415,8 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-Bnilkxge.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CMy_BH7C.css">
+    <script type="module" crossorigin src="/assets/index-Cb_q6mpY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BY0GnydS.css">
   </head>
   <body>
     <div id="cursor-dot"></div>
