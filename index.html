@@ -188,9 +188,30 @@
         50% { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(29,158,117,0.6); }
         100% { transform: translateY(0px); box-shadow: 0 8px 24px rgba(29,158,117,0.4); }
       }
-      /* --- MOBILE RESPONSIVENESS FIXES --- */
+      /* --- BULLETPROOF MOBILE RESPONSIVENESS --- */
       @media (max-width: 768px) {
-        /* 1. Nav adjusts to fit */
+        /* 1. Prevent horizontal scroll & scaling issues entirely */
+        html, body { width: 100%; max-width: 100vw; overflow-x: hidden; margin: 0; padding: 0; }
+        .container { width: 100%; padding: 0 1.2rem; box-sizing: border-box; overflow-x: hidden; }
+        
+        /* 2. Force ALL inline 300px/500px cards to collapse and fit the screen */
+        div[style*="flex: 1 1 500px"], 
+        div[style*="flex: 1 1 300px"],
+        div[style*="minWidth: 300px"],
+        div[style*="minWidth: 280px"],
+        .terminal-wrap, 
+        .tl-card {
+          flex: 1 1 100% !important;
+          min-width: 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          box-sizing: border-box;
+        }
+        
+        /* 3. Constrain images (like the Github charts) so they don't stretch */
+        img { max-width: 100% !important; object-fit: contain; }
+
+        /* 4. Nav adjusts to fit cleanly */
         nav { padding: 1rem; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
         .theme-btn { position: absolute; top: 1rem; right: 1rem; }
         .nav-logo { position: absolute; top: 1.2rem; left: 1rem; }
@@ -198,29 +219,27 @@
         .nav-links a { font-size: 0.75rem; }
         .nav-links a span { display: none; } /* Hides numbers to save space */
         
-        /* 2. Hero stacks and centers */
-        #hero { padding-top: 8rem !important; }
-        .hero-inner { flex-direction: column; text-align: center; gap: 3rem !important; }
-        .hero-inner > div { min-width: 100% !important; }
+        /* 5. Hero & Sections stack and center */
+        #hero { padding-top: 7rem !important; }
+        .hero-inner { flex-direction: column; text-align: center; gap: 2rem !important; }
         .hero-sub { margin-left: auto; margin-right: auto; }
         .hero-inner div[style*="display: flex"] { justify-content: center; flex-wrap: wrap; }
-        
-        /* 3. Sections & Timeline adjust */
         section { padding: 4rem 0; }
-        .container { padding: 0 1.2rem; }
+        
+        /* 6. Timeline adjustments for small screens */
         .timeline::before { left: 8px; }
         .tl-dot { width: 10px; height: 10px; margin-left: -5px; }
         .tl-item { gap: 1rem; flex-direction: column; }
-        .tl-item > div:first-child { display: none; } /* Hides dots on mobile for space */
-        .timeline::before { display: none; } /* Hides line on mobile */
+        .tl-item > div:first-child { display: none; } 
+        .timeline::before { display: none; } 
         
-        /* 4. Chat Widget perfectly sizes to phone */
+        /* 7. Chat Widget sizes perfectly to the phone */
         .chat-toggle { bottom: 1.2rem; right: 1.2rem; width: 56px; height: 56px; }
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BqmEJB29.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CU4Ii31Q.css">
+    <script type="module" crossorigin src="/assets/index-LPtlL4tq.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CMy_BH7C.css">
   </head>
   <body>
     <div id="cursor-dot"></div>
