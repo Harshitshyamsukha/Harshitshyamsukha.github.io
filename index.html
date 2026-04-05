@@ -236,6 +236,23 @@
         /* 7. Chat Widget sizes perfectly to the phone */
         .chat-toggle { bottom: 1.2rem; right: 1.2rem; width: 56px; height: 56px; }
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
+
+        /* 8. Scale down the massive Hero Text so it fits on screen */
+        .hero-inner h1, 
+        .hero-inner h2,
+        .hero-title {
+          font-size: 12vw !important; /* 'vw' makes the font scale exactly to the screen width */
+          line-height: 1.1 !important;
+          letter-spacing: normal !important;
+        }
+        
+        /* 9. Give the paragraph text some breathing room on the edges */
+        .hero-sub {
+          font-size: 0.95rem !important; 
+          padding: 0 10px; 
+          width: 100% !important;
+          box-sizing: border-box;
+        }
       }
     </style>
     <script type="module" crossorigin src="/assets/index-LPtlL4tq.js"></script>
