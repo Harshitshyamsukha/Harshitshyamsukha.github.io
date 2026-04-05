@@ -139,6 +139,36 @@
         50% { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(29,158,117,0.6); }
         100% { transform: translateY(0px); box-shadow: 0 8px 24px rgba(29,158,117,0.4); }
       }
+      /* --- MOBILE RESPONSIVENESS FIXES --- */
+      @media (max-width: 768px) {
+        /* 1. Nav adjusts to fit */
+        nav { padding: 1rem; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+        .theme-btn { position: absolute; top: 1rem; right: 1rem; }
+        .nav-logo { position: absolute; top: 1.2rem; left: 1rem; }
+        .nav-links { margin-top: 2rem; width: 100%; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .nav-links a { font-size: 0.75rem; }
+        .nav-links a span { display: none; } /* Hides numbers to save space */
+        
+        /* 2. Hero stacks and centers */
+        #hero { padding-top: 8rem !important; }
+        .hero-inner { flex-direction: column; text-align: center; gap: 3rem !important; }
+        .hero-inner > div { min-width: 100% !important; }
+        .hero-sub { margin-left: auto; margin-right: auto; }
+        .hero-inner div[style*="display: flex"] { justify-content: center; flex-wrap: wrap; }
+        
+        /* 3. Sections & Timeline adjust */
+        section { padding: 4rem 0; }
+        .container { padding: 0 1.2rem; }
+        .timeline::before { left: 8px; }
+        .tl-dot { width: 10px; height: 10px; margin-left: -5px; }
+        .tl-item { gap: 1rem; flex-direction: column; }
+        .tl-item > div:first-child { display: none; } /* Hides dots on mobile for space */
+        .timeline::before { display: none; } /* Hides line on mobile */
+        
+        /* 4. Chat Widget perfectly sizes to phone */
+        .chat-toggle { bottom: 1.2rem; right: 1.2rem; width: 56px; height: 56px; }
+        #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
+      }
     </style>
   </head>
   <body>
