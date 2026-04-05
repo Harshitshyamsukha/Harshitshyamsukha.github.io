@@ -159,12 +159,15 @@ function App() {
         >
           <div className="relative group cursor-pointer">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500 animate-pulse"></div>
-            <img 
-              src="/profile.png" 
-              alt="Harshit Shyamsukha" 
-              onError={(e) => { e.target.src = "https://via.placeholder.com/400x400/1e293b/38bdf8?text=Add+profile.png" }}
-              className="relative rounded-2xl object-cover border-2 border-slate-800 shadow-2xl h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] group-hover:scale-[1.02] group-hover:-rotate-2 transition-transform duration-500"
-            />
+          <img 
+            src="profile.png" 
+            alt="Harshit Shyamsukha" 
+            onError={(e) => { 
+            e.target.onerror = null; // Prevents infinite loops
+            e.target.src = "https://ui-avatars.com/api/?name=Harshit+Shyamsukha&background=1e293b&color=38bdf8&size=400"; 
+            }}
+            className="relative rounded-2xl object-cover border-2 border-slate-800 shadow-2xl h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] group-hover:scale-[1.02] group-hover:-rotate-2 transition-transform duration-500"
+          />
           </div>
         </motion.div>
       </header>
