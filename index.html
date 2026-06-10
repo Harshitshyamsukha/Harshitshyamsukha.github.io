@@ -63,14 +63,14 @@
         --color-on-surface-variant: #9e9488;
         --color-outline: #6b635c;
         --color-outline-variant: #2a2826;
-        --color-primary: #4edea3;
-        --color-primary-container: #10b981;
-        --color-on-primary: #003824;
-        --color-on-primary-container: #00422b;
-        --color-primary-fixed: #6ffbbe;
-        --color-primary-fixed-dim: #4edea3;
-        --color-secondary: #95d3ba;
-        --color-tertiary: #45dfa4;
+        --color-primary: #D4A853;
+        --color-primary-container: #A67C00;
+        --color-on-primary: #1a0800;
+        --color-on-primary-container: #0d0400;
+        --color-primary-fixed: #E8C86A;
+        --color-primary-fixed-dim: #D4A853;
+        --color-secondary: #C9A84C;
+        --color-tertiary: #E8A87C;
         --color-error: #ffb4ab;
         --color-error-container: #93000a;
         --color-background: #000000;
@@ -225,7 +225,7 @@
         padding: 18px 20px; font-family: var(--font-mono); font-size: 13px;
         line-height: 1.9; min-height: 120px; color: #a8a29e;
       }
-      .t-prompt { color: #4edea3; }
+      .t-prompt { color: var(--color-primary); }
       .t-cmd { color: #e8e2dc; }
       .t-out { color: #7ec8a3; }
       .t-dim { color: #6b635c; }
@@ -245,17 +245,17 @@
         display: inline-flex; align-items: center; gap: var(--space-2);
         transition: background var(--duration-base) ease, transform var(--duration-fast) ease, box-shadow var(--duration-base) ease;
       }
-      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(78, 222, 163, 0.25); }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 168, 83, 0.25); }
       .btn-primary:active { transform: translateY(0); }
       .btn-secondary {
         padding: 12px 24px; border-radius: var(--radius-full);
-        border: 1px solid rgba(78, 222, 163, 0.3); background: transparent;
+        border: 1px solid rgba(212, 168, 83, 0.3); background: transparent;
         color: var(--color-primary); font-family: var(--font-body);
         font-weight: 500; font-size: var(--text-label-caps); letter-spacing: 0.03em;
         cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-2);
         transition: all var(--duration-base) ease;
       }
-      .btn-secondary:hover { background: rgba(78, 222, 163, 0.1); transform: translateY(-2px); }
+      .btn-secondary:hover { background: rgba(212, 168, 83, 0.1); transform: translateY(-2px); }
 
       /* ===== SECTION HEADERS ===== */
       .section-eyebrow {
@@ -301,7 +301,7 @@
       }
       .project-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 20px 40px -12px rgba(166, 124, 0, 0.15);
       }
       .card-media {
         position: relative; width: 100%; height: 200px;
@@ -324,12 +324,12 @@
       .card-category-badge {
         font-family: var(--font-mono); font-size: var(--text-code-sm);
         padding: 3px 10px; border-radius: var(--radius-full);
-        background: rgba(6, 78, 59, 0.5); backdrop-filter: blur(8px);
-        border: 1px solid rgba(78, 222, 163, 0.2);
+        background: rgba(90, 60, 20, 0.5); backdrop-filter: blur(8px);
+        border: 1px solid rgba(212, 168, 83, 0.2);
         color: var(--color-primary);
       }
-      .card-category-badge.ai { background: rgba(6, 78, 59, 0.5); color: var(--color-primary); border-color: rgba(78, 222, 163, 0.2); }
-      .card-category-badge.fullstack { background: rgba(16, 185, 129, 0.2); color: var(--color-tertiary); border-color: rgba(16, 185, 129, 0.3); }
+      .card-category-badge.ai { background: rgba(90, 60, 20, 0.5); color: var(--color-primary); border-color: rgba(212, 168, 83, 0.2); }
+      .card-category-badge.fullstack { background: rgba(166, 124, 0, 0.2); color: var(--color-tertiary); border-color: rgba(166, 124, 0, 0.3); }
       .card-category-badge.client { background: rgba(45, 52, 73, 0.8); color: var(--color-secondary); border-color: rgba(149, 211, 186, 0.3); }
       .card-category-badge.hackathon { background: rgba(255, 180, 171, 0.15); color: var(--color-error); border-color: rgba(255, 180, 171, 0.2); }
       .status-dot { width: 8px; height: 8px; border-radius: 50%; }
@@ -356,7 +356,7 @@
       .card-stack-tag:hover {
         background: var(--color-primary-container);
         color: var(--color-on-primary-container);
-        border-color: rgba(78, 222, 163, 0.5);
+        border-color: rgba(212, 168, 83, 0.5);
       }
       .card-footer {
         display: flex; justify-content: space-between; align-items: center;
@@ -384,7 +384,7 @@
       }
       .skill-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 20px 40px -12px rgba(166, 124, 0, 0.15);
       }
       .skill-media {
         position: relative; width: 100%; height: 140px;
@@ -436,7 +436,7 @@
       .skill-tag:hover {
         background: var(--color-primary-container);
         color: var(--color-on-primary-container);
-        border-color: rgba(78, 222, 163, 0.5);
+        border-color: rgba(212, 168, 83, 0.5);
       }
 
       /* ===== EXPERIENCE CARDS ===== */
@@ -447,7 +447,7 @@
       }
       .exp-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.15);
+        box-shadow: 0 20px 40px -12px rgba(166, 124, 0, 0.15);
       }
       .exp-media {
         position: relative; width: 100%; height: 180px;
@@ -471,7 +471,7 @@
       }
       .exp-date {
         font-family: var(--font-mono); font-size: var(--text-code-sm);
-        color: var(--color-primary); background: rgba(78, 222, 163, 0.08);
+        color: var(--color-primary); background: rgba(212, 168, 83, 0.08);
         padding: 2px 10px; border-radius: var(--radius-full);
         white-space: nowrap;
       }
@@ -496,8 +496,8 @@
         transition: all 300ms ease;
       }
       .gh-card:hover {
-        border-color: rgba(78, 222, 163, 0.3);
-        box-shadow: 0 4px 20px -8px rgba(16, 185, 129, 0.1);
+        border-color: rgba(212, 168, 83, 0.3);
+        box-shadow: 0 4px 20px -8px rgba(166, 124, 0, 0.1);
       }
       .gh-repo-name {
         font-family: var(--font-mono); font-size: 14px; font-weight: 500;
@@ -517,8 +517,8 @@
         display: inline-flex; align-items: center; gap: var(--space-2);
         font-family: var(--font-mono); font-size: var(--text-code-sm);
         padding: 3px 10px; border-radius: var(--radius-full);
-        background: rgba(78, 222, 163, 0.1); color: var(--color-primary);
-        border: 1px solid rgba(78, 222, 163, 0.2);
+        background: rgba(212, 168, 83, 0.1); color: var(--color-primary);
+        border: 1px solid rgba(212, 168, 83, 0.2);
       }
       .building-badge .pulse {
         width: 6px; height: 6px; border-radius: 50%;
@@ -535,7 +535,7 @@
       }
       .cert-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.1);
+        box-shadow: 0 20px 40px -12px rgba(166, 124, 0, 0.1);
       }
       .cert-icon {
         width: 48px; height: 48px; border-radius: var(--radius-lg);
@@ -578,7 +578,7 @@
       }
       .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px rgba(78, 222, 163, 0.12);
+        box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.12);
       }
       .form-field input::placeholder, .form-field textarea::placeholder { color: var(--color-outline); }
       .form-field textarea { min-height: 130px; resize: vertical; }
@@ -662,10 +662,10 @@
       .modal-links a {
         font-family: var(--font-mono); font-size: var(--text-code-sm);
         padding: 8px 18px; border-radius: var(--radius-full);
-        border: 1px solid rgba(78, 222, 163, 0.3); color: var(--color-primary);
+        border: 1px solid rgba(212, 168, 83, 0.3); color: var(--color-primary);
         transition: all var(--duration-base) ease;
       }
-      .modal-links a:hover { background: rgba(78, 222, 163, 0.1); }
+      .modal-links a:hover { background: rgba(212, 168, 83, 0.1); }
 
       /* ===== CHAT WIDGET ===== */
       .chat-toggle {
@@ -674,10 +674,10 @@
         background: var(--color-primary); color: var(--color-on-primary);
         border: none; cursor: pointer; display: flex;
         align-items: center; justify-content: center;
-        box-shadow: 0 8px 24px rgba(78, 222, 163, 0.3);
+        box-shadow: 0 8px 24px rgba(212, 168, 83, 0.3);
         transition: all 0.3s var(--ease-spring);
       }
-      .chat-toggle:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(78, 222, 163, 0.4); }
+      .chat-toggle:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(212, 168, 83, 0.4); }
       #chat-bubble {
         position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
         width: 340px; border-radius: var(--radius-xl);
@@ -779,7 +779,7 @@
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BLHwe2xH.js"></script>
+    <script type="module" crossorigin src="/assets/index-BfrFdo07.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BhVv8TMm.css">
   </head>
   <body>
