@@ -144,13 +144,13 @@
       .nav-links { display: none; align-items: center; gap: var(--space-8); }
       @media (min-width: 768px) { .nav-links { display: flex; } }
       .nav-link {
-        font-size: var(--text-body-md); color: rgba(245, 224, 216, 0.7);
+        font-size: var(--text-body-md); color: #ffffff;
         transition: color var(--duration-base) ease; cursor: pointer;
         padding: var(--space-2) var(--space-3); position: relative; overflow: hidden;
-        border-radius: var(--radius-sm);
+        border-radius: var(--radius-sm); text-decoration: none;
       }
-      .nav-link:hover { color: #f5e0d8; }
-      .nav-link.active { color: #f5e0d8; font-weight: 600; }
+      .nav-link:hover { text-decoration: underline; color: #ffffff; }
+      .nav-link.active { color: #ffffff; font-weight: 600; text-decoration: underline; }
       .nav-link .ripple {
         position: absolute; border-radius: 50%;
         background: rgba(255, 255, 255, 0.15);
