@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0F1E"/>
+      <stop offset="100%" style="stop-color:#0D1525"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="80" y="260" font-family="Syne, sans-serif" font-size="72" font-weight="800" fill="#E8EDF5">Harshit</text>
+  <text x="80" y="345" font-family="Syne, sans-serif" font-size="72" font-weight="800" fill="#15C48A">Shyamsukha</text>
+  <text x="80" y="420" font-family="DM Sans, sans-serif" font-size="28" fill="#7A8BA8">AI/ML Engineer &amp; Full-Stack Developer</text>
+  <line x1="80" y1="460" x2="280" y2="460" stroke="#1D9E75" stroke-width="4" stroke-linecap="round"/>
+  <text x="80" y="510" font-family="JetBrains Mono, monospace" font-size="20" fill="#3D4F62">B.Tech CSE @ SRMIST · Conflict Forecasting · LLM Infrastructure</text>
+</svg>
