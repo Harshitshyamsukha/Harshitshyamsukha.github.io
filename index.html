@@ -208,30 +208,30 @@
 
       /* ===== TERMINAL ===== */
       .terminal-wrap {
-        background: var(--color-surface-low); border: 1px solid rgba(255,255,255,0.05);
+        background: #1e1e1e; border: 1px solid #333;
         border-radius: var(--radius-lg); overflow: hidden;
-        box-shadow: 0 24px 64px rgba(0,0,0,0.4); min-width: 400px; max-width: 480px;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.5); min-width: 400px; max-width: 480px;
         opacity: 0; transform: translateY(12px);
         animation: fadeUp 800ms var(--ease-spring) 600ms forwards;
       }
       .terminal-header {
         display: flex; align-items: center; gap: 6px;
-        padding: 10px 14px; background: var(--color-surface-high);
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 10px 14px; background: #2d2d2d;
+        border-bottom: 1px solid #333;
       }
       .t-dot { width: 11px; height: 11px; border-radius: 50%; }
-      .t-title { font-family: var(--font-mono); font-size: 11px; color: var(--color-on-surface-variant); margin-left: 12px; }
+      .t-title { font-family: var(--font-mono); font-size: 11px; color: #999; margin-left: 12px; }
       .terminal-body {
         padding: 18px 20px; font-family: var(--font-mono); font-size: 13px;
-        line-height: 1.9; min-height: 120px; color: #a8a29e;
+        line-height: 1.9; min-height: 120px; color: #d4d4d4;
       }
-      .t-prompt { color: var(--color-primary); }
-      .t-cmd { color: #e8e2dc; }
-      .t-out { color: #7ec8a3; }
-      .t-dim { color: #6b635c; }
+      .t-prompt { color: #4edea3; }
+      .t-cmd { color: #d4d4d4; }
+      .t-out { color: #6a9955; }
+      .t-dim { color: #808080; }
       .cursor-blink {
         display: inline-block; width: 7px; height: 13px;
-        background: var(--color-primary); vertical-align: middle;
+        background: #d4d4d4; vertical-align: middle;
         animation: blink 1s step-end infinite;
       }
       @media (max-width: 768px) { .terminal-wrap { min-width: 0; max-width: 100%; } }
@@ -324,14 +324,9 @@
       .card-category-badge {
         font-family: var(--font-mono); font-size: var(--text-code-sm);
         padding: 3px 10px; border-radius: var(--radius-full);
-        background: rgba(90, 60, 20, 0.5); backdrop-filter: blur(8px);
-        border: 1px solid rgba(212, 168, 83, 0.2);
-        color: var(--color-primary);
+        background: #2a2a2a; border: 1px solid #3a3a3a;
+        color: #d4d4d4;
       }
-      .card-category-badge.ai { background: rgba(90, 60, 20, 0.5); color: var(--color-primary); border-color: rgba(212, 168, 83, 0.2); }
-      .card-category-badge.fullstack { background: rgba(166, 124, 0, 0.2); color: var(--color-tertiary); border-color: rgba(166, 124, 0, 0.3); }
-      .card-category-badge.client { background: rgba(45, 52, 73, 0.8); color: var(--color-secondary); border-color: rgba(149, 211, 186, 0.3); }
-      .card-category-badge.hackathon { background: rgba(255, 180, 171, 0.15); color: var(--color-error); border-color: rgba(255, 180, 171, 0.2); }
       .status-dot { width: 8px; height: 8px; border-radius: 50%; }
       .status-dot.live { background: var(--color-primary); }
       .status-dot.wip { background: var(--color-tertiary); }
@@ -348,16 +343,10 @@
       .card-stack-tag {
         font-family: var(--font-mono); font-size: var(--text-code-sm);
         padding: 4px 12px; border-radius: var(--radius-full);
-        background: var(--color-surface-high);
-        border: 1px solid rgba(42, 40, 38, 0.4);
-        color: var(--color-on-surface-variant);
-        transition: all var(--duration-fast) ease;
+        background: #2a2a2a; border: 1px solid #3a3a3a;
+        color: #d4d4d4; transition: all var(--duration-fast) ease;
       }
-      .card-stack-tag:hover {
-        background: var(--color-primary-container);
-        color: var(--color-on-primary-container);
-        border-color: rgba(212, 168, 83, 0.5);
-      }
+      .card-stack-tag:hover { text-decoration: underline; }
       .card-footer {
         display: flex; justify-content: space-between; align-items: center;
         padding: var(--card-padding); padding-top: 0; margin-top: auto;
@@ -433,11 +422,7 @@
         color: var(--color-on-surface-variant);
         transition: all var(--duration-fast) ease;
       }
-      .skill-tag:hover {
-        background: var(--color-primary-container);
-        color: var(--color-on-primary-container);
-        border-color: rgba(212, 168, 83, 0.5);
-      }
+      .skill-tag:hover { text-decoration: underline; }
 
       /* ===== EXPERIENCE CARDS ===== */
       .exp-card {
