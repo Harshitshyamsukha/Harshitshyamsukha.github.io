@@ -552,9 +552,9 @@
         color: var(--color-on-surface-variant);
       }
       .form-field input, .form-field select, .form-field textarea {
-        background: var(--color-surface-low); border: 1px solid rgba(42, 40, 38, 0.4);
+        background: #ffffff; border: 1px solid #444;
         border-radius: var(--radius-lg); font-family: var(--font-body);
-        font-weight: 400; font-size: 15px; color: var(--color-on-background);
+        font-weight: 400; font-size: 15px; color: #000000;
         padding: 12px 16px; outline: none;
         transition: border-color var(--duration-base) ease, box-shadow var(--duration-base) ease;
       }
@@ -562,7 +562,7 @@
         border-color: var(--color-primary);
         box-shadow: 0 0 0 3px rgba(180, 180, 180, 0.12);
       }
-      .form-field input::placeholder, .form-field textarea::placeholder { color: var(--color-outline); }
+      .form-field input::placeholder, .form-field textarea::placeholder { color: #888; }
       .form-field textarea { min-height: 130px; resize: vertical; }
       .contact-form .btn-primary { width: 100%; height: 48px; justify-content: center; font-size: var(--text-body-md); }
       .form-error { color: var(--color-error); font-size: 13px; font-family: var(--font-body); }
@@ -718,7 +718,8 @@
         border-top: 1px solid rgba(255,255,255,0.08); margin-top: var(--space-8);
         background: rgba(30, 5, 12, 0.55); backdrop-filter: blur(20px);
       }
-      .footer p { font-family: var(--font-mono); font-size: var(--text-code-sm); color: var(--color-on-surface-variant); }
+      .footer p { font-family: var(--font-mono); font-size: var(--text-code-sm); color: var(--color-on-surface-variant); transition: color var(--duration-base) ease; }
+      .footer p:hover { text-decoration: underline; }
 
       /* ===== KEYFRAMES ===== */
       @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
