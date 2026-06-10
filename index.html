@@ -579,10 +579,10 @@
       }
       .social-link {
         color: var(--color-on-surface-variant); font-size: var(--text-body-md);
-        font-family: var(--font-mono);
+        font-family: var(--font-mono); text-decoration: none;
         transition: color var(--duration-base) ease;
       }
-      .social-link:hover { color: var(--color-primary); }
+      .social-link:hover { color: var(--color-primary); text-decoration: underline; }
 
       /* ===== MODAL ===== */
       .modal-overlay {
@@ -715,7 +715,8 @@
       /* ===== FOOTER ===== */
       .footer {
         text-align: center; padding: var(--space-8) 0;
-        border-top: 1px solid rgba(255,255,255,0.05); margin-top: var(--space-8);
+        border-top: 1px solid rgba(255,255,255,0.08); margin-top: var(--space-8);
+        background: rgba(30, 5, 12, 0.55); backdrop-filter: blur(20px);
       }
       .footer p { font-family: var(--font-mono); font-size: var(--text-code-sm); color: var(--color-on-surface-variant); }
 
