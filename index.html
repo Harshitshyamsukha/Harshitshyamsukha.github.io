@@ -240,6 +240,12 @@
       @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
       @media (min-width: 1440px) { .masonry-grid { column-count: 4; } }
       .masonry-item { break-inside: avoid; margin-bottom: var(--masonry-gutter); }
+      .cards-grid {
+        display: grid; grid-template-columns: 1fr;
+        gap: var(--masonry-gutter); align-items: stretch;
+      }
+      @media (min-width: 640px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
 
       /* ===== PROJECT CARDS ===== */
       .project-card {
@@ -726,7 +732,7 @@
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-DFzDlaEO.js"></script>
+    <script type="module" crossorigin src="/assets/index-CsVbRZHe.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BhVv8TMm.css">
   </head>
   <body>
