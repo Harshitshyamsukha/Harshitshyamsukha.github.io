@@ -280,7 +280,7 @@
         background: var(--c-surface-2); border: 1px solid var(--c-border-hover);
         border-radius: var(--r-xl); max-width: 1100px; width: 100%;
         max-height: min(680px, calc(100vh - 48px)); overflow: hidden;
-        display: grid; grid-template-columns: 52% 48%; position: relative;
+        display: grid; grid-template-columns: 52% 48%; grid-template-rows: minmax(0, 1fr); position: relative;
         transform: scale(0.96); opacity: 0;
         animation: modalIn 200ms ease-out forwards;
       }
@@ -303,11 +303,11 @@
       .modal-left {
         background: var(--c-surface); border-right: 1px solid var(--c-border);
         padding: 40px 36px; display: flex; flex-direction: column; gap: var(--sp-4);
-        overflow-y: auto; min-height: 0; max-height: 100%;
+        overflow-y: auto; min-height: 0; height: 100%;
       }
       .modal-right {
         padding: 28px; display: flex; flex-direction: column; gap: var(--sp-6);
-        overflow-y: auto; min-height: 0; max-height: 100%;
+        overflow-y: auto; min-height: 0; height: 100%;
       }
       .modal-top-row { display: flex; align-items: center; gap: var(--sp-2); }
       .modal-title { font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--c-text-1); line-height: 1.2; margin-bottom: 8px; }
