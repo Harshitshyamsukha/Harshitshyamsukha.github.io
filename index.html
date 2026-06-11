@@ -179,6 +179,24 @@
         to { transform: scale(4); opacity: 0; }
       }
       .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+      .hamburger-btn { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+      .hamburger-line { width: 20px; height: 2px; background: #f5e0d8; border-radius: 2px; transition: all 300ms ease; }
+      .hamburger-line.open:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+      .hamburger-line.open:nth-child(2) { opacity: 0; }
+      .hamburger-line.open:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+      @media (max-width: 768px) { .hamburger-btn { display: flex; } }
+      .mobile-drawer {
+        max-height: 0; overflow: hidden; transition: max-height 400ms ease;
+        background: rgba(30, 5, 12, 0.55); backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .mobile-drawer.open { max-height: 300px; }
+      .mobile-nav-link {
+        display: block; padding: var(--space-3) var(--container-margin-mobile);
+        color: #ffffff; font-size: var(--text-body-md); text-decoration: none;
+        border-top: 1px solid rgba(255,255,255,0.05); transition: background 150ms ease;
+      }
+      .mobile-nav-link:hover { background: rgba(255,255,255,0.05); }
       .nav-icon-btn {
         padding: var(--space-2); border-radius: var(--radius-full);
         border: none; background: transparent; color: rgba(245, 224, 216, 0.7);
@@ -781,7 +799,7 @@
         #chat-bubble { width: calc(100vw - 2.4rem); right: 1.2rem; bottom: 5.5rem; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-KDbzyz3z.js"></script>
+    <script type="module" crossorigin src="/assets/index-DXOtLI1I.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index--tqPQ5_2.css">
   </head>
   <body>
