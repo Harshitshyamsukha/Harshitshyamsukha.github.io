@@ -87,20 +87,23 @@
       .layout { min-height: 100vh; position: relative; }
       .layout::before {
         content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-        opacity: 0.35;
-        background:
-          radial-gradient(ellipse 900px 700px at 15% 5%, rgba(140,45,80,0.35) 0%, transparent 100%),
-          radial-gradient(ellipse 800px 600px at 85% 20%, rgba(90,35,110,0.30) 0%, transparent 100%),
-          radial-gradient(ellipse 700px 800px at 50% 90%, rgba(25,65,85,0.25) 0%, transparent 100%),
-          radial-gradient(ellipse 600px 500px at 40% 45%, rgba(160,55,75,0.15) 0%, transparent 100%),
-          radial-gradient(ellipse 500px 400px at 75% 65%, rgba(180,130,45,0.08) 0%, transparent 100%);
+        background-color: #0a0a0f;
+        background-image:
+          radial-gradient(ellipse 70% 55% at 25% 30%,
+            rgba(88, 60, 180, 0.28), transparent),
+          radial-gradient(ellipse 50% 40% at 75% 65%,
+            rgba(40, 80, 160, 0.20), transparent),
+          radial-gradient(ellipse 45% 35% at 55% 15%,
+            rgba(120, 50, 130, 0.16), transparent),
+          radial-gradient(ellipse 35% 30% at 80% 20%,
+            rgba(180, 90, 60, 0.08), transparent);
       }
       .layout::after {
         content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-        opacity: 0.035; mix-blend-mode: overlay;
+        opacity: 0.045; mix-blend-mode: overlay;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         background-repeat: repeat;
-        background-size: 256px 256px;
+        background-size: 180px 180px;
       }
       .glass {
         backdrop-filter: blur(18px) saturate(1.5);
