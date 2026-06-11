@@ -90,50 +90,50 @@
       .main { padding: 0 var(--sp-8) var(--sp-16); max-width: 1200px; margin: 0 auto; width: 100%; }
 
       /* ===== ABOUT SECTION ===== */
-      .about-section { display: flex; flex-direction: column; align-items: center; padding: var(--sp-12) 0 var(--sp-10); gap: var(--sp-4); }
+      .about-hero { display: flex; flex-direction: column; align-items: center; padding: var(--sp-10) 0 var(--sp-6); gap: var(--sp-3); }
       .about-avatar {
-        width: 96px; height: 96px; border-radius: var(--r-full);
+        width: 80px; height: 80px; border-radius: var(--r-full);
         border: 2px solid var(--c-border-hover);
         background: var(--c-accent-dim); color: var(--c-text-1);
         display: flex; align-items: center; justify-content: center;
-        font-family: var(--font-display); font-weight: 600; font-size: 28px;
+        font-family: var(--font-display); font-weight: 600; font-size: 24px;
       }
-      .about-name { display: flex; flex-direction: column; align-items: center; line-height: 1.2; gap: 0; }
-      .about-first { font-family: var(--font-display); font-weight: 600; font-size: 24px; color: var(--c-text-1); }
-      .about-last { font-family: var(--font-display); font-weight: 600; font-size: 24px; color: var(--c-text-2); }
-      .about-role { font-size: 13px; color: var(--c-text-2); text-align: center; margin-top: 6px; }
-      .about-tags { font-family: var(--font-mono); font-size: 12px; color: var(--c-text-3); text-align: center; margin-top: 4px; }
-      .about-divider { width: 80px; height: 1px; background: var(--c-border); margin: var(--sp-4) 0; }
-      .about-stats { display: flex; gap: var(--sp-8); justify-content: center; }
-      .about-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-      .about-num { font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--c-text-1); }
-      .about-label { font-size: 10px; color: var(--c-text-3); text-transform: uppercase; letter-spacing: 0.08em; }
-      .about-bio { font-size: 14px; color: var(--c-text-2); text-align: center; line-height: 1.65; max-width: 480px; }
-      .about-actions { display: flex; gap: var(--sp-3); margin-top: var(--sp-2); }
-      .about-btn {
-        display: flex; align-items: center; gap: var(--sp-2); height: 40px;
-        padding: 0 20px; border-radius: var(--r-md); background: var(--c-accent); border: none;
-        color: var(--c-text-1); font-family: var(--font-body); font-weight: 500; font-size: 13px;
-        cursor: pointer; transition: all 200ms ease; text-decoration: none;
-      }
-      .about-btn:hover { filter: brightness(1.08); }
-      .about-btn:active { transform: scale(0.98); }
-      .about-btn-outline {
-        display: flex; align-items: center; gap: var(--sp-2); height: 40px;
-        padding: 0 20px; border-radius: var(--r-md);
-        background: var(--c-surface-2); border: 1px solid var(--c-border);
-        color: var(--c-text-1); font-family: var(--font-body); font-weight: 500; font-size: 13px;
-        cursor: pointer; transition: all 200ms ease; text-decoration: none;
-      }
-      .about-btn-outline:hover { border-color: var(--c-border-hover); background: var(--c-surface-3); }
-      .about-social { display: flex; gap: var(--sp-3); }
+      .about-name { display: flex; flex-direction: column; align-items: center; line-height: 1.2; }
+      .about-first { font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--c-text-1); }
+      .about-last { font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--c-text-2); }
+      .about-role { font-size: 12px; color: var(--c-text-2); text-align: center; }
+      .about-tags { font-family: var(--font-mono); font-size: 11px; color: var(--c-text-3); text-align: center; }
+      .about-social { display: flex; gap: var(--sp-2); }
       .about-social a {
         display: flex; align-items: center; justify-content: center;
-        width: 40px; height: 40px; border-radius: var(--r-full);
+        width: 36px; height: 36px; border-radius: var(--r-full);
         background: var(--c-surface-2); border: 1px solid var(--c-border);
         color: var(--c-text-2); transition: all 150ms ease;
       }
       .about-social a:hover { color: var(--c-text-1); border-color: var(--c-border-hover); background: var(--c-surface-3); }
+      .about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); padding-bottom: var(--sp-8); }
+      @media (max-width: 900px) { .about-cards { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 600px) { .about-cards { grid-template-columns: 1fr; } }
+      .about-card {
+        background: var(--c-surface); border: 1px solid var(--c-border);
+        border-radius: var(--r-md); padding: var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3);
+      }
+      .about-card-hdr { display: flex; align-items: center; gap: var(--sp-3); }
+      .about-card-icon {
+        width: 36px; height: 36px; border-radius: var(--r-sm);
+        background: var(--c-accent-dim); display: flex; align-items: center; justify-content: center;
+        color: var(--c-accent-text); flex-shrink: 0;
+      }
+      .about-card-title { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--c-text-1); }
+      .about-card-body { display: flex; flex-direction: column; gap: var(--sp-2); }
+      .about-card-row { font-size: 13px; color: var(--c-text-2); line-height: 1.6; }
+      .about-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+      .about-card-tag {
+        font-family: var(--font-mono); font-size: 10px; padding: 2px 7px;
+        border-radius: var(--r-sm); background: var(--c-surface-3); color: var(--c-text-3);
+        border: 1px solid var(--c-border);
+      }
+      .about-card-mono { font-family: var(--font-mono); font-size: 12px; color: var(--c-text-2); line-height: 1.6; }
 
       /* ===== TAB BAR ===== */
       .tab-bar {
@@ -444,7 +444,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-kBI9Vjt0.js"></script>
+    <script type="module" crossorigin src="/assets/index-CqSUtRrz.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-qKbdac4u.css">
   </head>
   <body>
