@@ -161,14 +161,33 @@
       .about-card-mono { font-family: var(--font-mono); font-size: 12px; color: var(--c-text-2); line-height: 1.6; }
 
       /* ===== TAB BAR ===== */
-      @keyframes shimmer {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+      @keyframes glowOrb {
+        0% { left: 5%; top: 50%; opacity: 0; }
+        5% { left: 5%; top: 50%; opacity: 0.9; }
+        9% { left: 22%; top: 35%; }
+        16% { left: 22%; top: 35%; }
+        20% { left: 55%; top: 65%; }
+        28% { left: 55%; top: 65%; }
+        32% { left: 78%; top: 30%; }
+        40% { left: 78%; top: 30%; }
+        44% { left: 92%; top: 55%; }
+        52% { left: 92%; top: 55%; }
+        56% { left: 45%; top: 25%; }
+        63% { left: 45%; top: 25%; }
+        67% { left: 68%; top: 70%; }
+        75% { left: 68%; top: 70%; }
+        79% { left: 12%; top: 40%; }
+        87% { left: 12%; top: 40%; }
+        91% { left: 82%; top: 50%; }
+        96% { left: 82%; top: 50%; opacity: 0.9; }
+        100% { left: 82%; top: 50%; opacity: 0; }
       }
-      @keyframes glowPulse {
-        0% { opacity: 0.5; }
-        50% { opacity: 0.85; }
-        100% { opacity: 0.5; }
+      @keyframes glowDrop {
+        0% { opacity: 0.3; transform: scaleX(1); }
+        25% { opacity: 0.8; transform: scaleX(1.15); }
+        50% { opacity: 0.4; transform: scaleX(0.9); }
+        75% { opacity: 0.7; transform: scaleX(1.1); }
+        100% { opacity: 0.3; transform: scaleX(1); }
       }
       .tab-bar {
         display: flex; gap: var(--sp-2); flex-wrap: wrap; justify-content: center;
@@ -180,25 +199,20 @@
         overflow: hidden;
       }
       .tab-bar::before {
-        content: ''; position: absolute; inset: 0; pointer-events: none;
-        background: linear-gradient(90deg,
-          transparent 0%,
-          rgba(230,57,70,0.10) 25%,
-          rgba(100,130,255,0.08) 50%,
-          rgba(230,57,70,0.10) 75%,
-          transparent 100%
-        );
-        background-size: 200% 100%;
-        animation: shimmer 7s ease-in-out infinite;
+        content: ''; position: absolute; pointer-events: none;
+        width: 90px; height: 90px; border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(230,57,70,0.12) 0%, transparent 65%);
+        animation: glowOrb 45s cubic-bezier(0.45, 0.05, 0.2, 0.99) infinite;
+        transform: translate(-50%, -50%);
       }
       .tab-bar::after {
         content: ''; position: absolute; left: 0; right: 0; top: 100%;
-        height: 120px; pointer-events: none;
+        height: 80px; pointer-events: none;
         background:
-          radial-gradient(ellipse 350px 80px at 15% 0%, rgba(100,130,255,0.12) 0%, transparent 100%),
-          radial-gradient(ellipse 500px 100px at 50% 0%, rgba(230,57,70,0.10) 0%, transparent 100%),
-          radial-gradient(ellipse 350px 80px at 85% 0%, rgba(40,202,65,0.07) 0%, transparent 100%);
-        animation: glowPulse 5s ease-in-out infinite;
+          radial-gradient(ellipse 300px 60px at 15% 0%, rgba(100,130,255,0.10) 0%, transparent 100%),
+          radial-gradient(ellipse 400px 70px at 50% 0%, rgba(230,57,70,0.08) 0%, transparent 100%),
+          radial-gradient(ellipse 300px 60px at 85% 0%, rgba(40,202,65,0.06) 0%, transparent 100%);
+        animation: glowDrop 18s ease-in-out infinite;
       }
       .tab-btn {
         padding: 6px 14px; border-radius: var(--r-sm);
