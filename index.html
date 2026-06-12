@@ -312,6 +312,15 @@
 
       /* ===== CONTACT ===== */
       .contact-section { margin-top: var(--sp-12); padding-top: var(--sp-8); }
+      .contact-tabs { display: flex; gap: 0; margin-bottom: var(--sp-6); justify-content: center; border-bottom: 2px solid #000000; }
+      .contact-tab {
+        font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+        padding: 10px 24px; cursor: pointer; background: #ffffff; color: #000000;
+        border: 2px solid #000000; border-bottom: none; margin-bottom: -2px;
+        transition: all 150ms ease; box-shadow: none;
+      }
+      .contact-tab.active { background: #000000; color: #ffffff; }
+      .contact-tab:first-child { border-right: none; }
       .contact-wrap { max-width: 540px; margin: 0 auto; }
       .contact-form { display: flex; flex-direction: column; gap: var(--sp-4); }
       .form-field { display: flex; flex-direction: column; gap: var(--sp-1); }
@@ -333,6 +342,32 @@
       .form-success { text-align: center; padding: var(--sp-8) 0; }
       .form-success p:first-child { font-weight: 700; font-size: 20px; color: #000000; margin-bottom: var(--sp-2); }
       .form-success p:last-child { font-size: 14px; color: var(--c-text-2); }
+
+      /* ===== THINKING PROCESS ===== */
+      .process-section { margin-top: var(--sp-12); padding-top: var(--sp-8); }
+      .process-nav { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-6); justify-content: center; }
+      .process-nav-btn {
+        font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+        padding: 8px 16px; cursor: pointer; background: #ffffff; color: #000000;
+        border: 2px solid #000000; transition: all 150ms ease;
+      }
+      .process-nav-btn.active { background: #000000; color: #ffffff; }
+      .process-nav-btn:hover { background: #000000; color: #ffffff; }
+      .process-content { max-width: 680px; margin: 0 auto; }
+      .process-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: #000000; margin-bottom: var(--sp-1); }
+      .process-repo-link { font-family: var(--font-mono); font-size: 11px; color: var(--c-secondary); display: inline-block; margin-bottom: var(--sp-4); }
+      .process-repo-link:hover { text-decoration: underline; }
+      .process-block { margin-bottom: var(--sp-4); }
+      .process-block-title { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #000000; margin-bottom: var(--sp-2); padding-bottom: var(--sp-1); border-bottom: 2px solid #000000; }
+      .process-text { font-size: 14px; line-height: 1.7; color: var(--c-text-2); }
+      .process-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+      .process-list-item { font-size: 14px; line-height: 1.6; color: var(--c-text-2); padding-left: var(--sp-3); position: relative; }
+      .process-list-item::before { content: '→'; position: absolute; left: 0; color: var(--c-secondary); }
+      .process-tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+      .process-tag {
+        font-family: var(--font-mono); font-size: 10px; padding: 4px 10px;
+        background: #ffffff; color: var(--c-text-2); border: 1px solid #000000;
+      }
 
       .btn-primary {
         padding: 12px 24px;
@@ -586,8 +621,8 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-4J9pNQlg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CAFb01Wk.css">
+    <script type="module" crossorigin src="/assets/index-m8pI4NKU.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BS566Ceb.css">
   </head>
   <body>
     <div id="root"></div>
