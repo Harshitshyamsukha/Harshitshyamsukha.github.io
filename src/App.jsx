@@ -848,7 +848,7 @@ export default function App() {
       .finally(() => setCrSending(false));
   };
 
-  const filteredPins = ALL_PINS.filter(p => {
+  const filteredPins = useMemo(() => ALL_PINS.filter(p => {
     if (filterTab === 'all') return true;
     if (filterTab === 'about' || filterTab === 'contact' || filterTab === 'process') return false;
     if (filterTab === 'projects') return ['ai', 'fullstack', 'client'].includes(p.category);
@@ -859,7 +859,17 @@ export default function App() {
     if (filterTab === 'activity') return p.category === 'activity';
     if (filterTab === 'void') return true;
     return false;
-  });
+  }), [filterTab]);
+
+  const shuffledPins = useMemo(() => {
+    const arr = [...(filteredPins || [])];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [shuffleKey]);
 
   const projectNav = (dir) => {
     const idx = filteredPins.findIndex(p => p.id === selectedProject?.id);
@@ -1268,14 +1278,7 @@ export default function App() {
         )}
 
         <div className={`masonry${filterTab === 'void' ? ' void-mode' : ''}`}>
-          {(() => {
-            const arr = [...(filteredPins || [])];
-            for (let i = arr.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            return arr;
-          })().map((pin) => {
+          {shuffledPins.map((pin) => {
             const badge = getBadgeStyle(pin.category);
             return (
                 <div key={pin.id} className="pin-card reveal" style={{ '--card-index': 0 }}
