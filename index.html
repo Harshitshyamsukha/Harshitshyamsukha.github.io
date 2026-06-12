@@ -49,6 +49,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     
     <style>
+      @property --vt1 { syntax: '<color>'; inherits: true; initial-value: #cc99ff; }
+      @property --vt2 { syntax: '<color>'; inherits: true; initial-value: #9966cc; }
+      @property --vt3 { syntax: '<color>'; inherits: true; initial-value: #663399; }
+      @property --vb { syntax: '<color>'; inherits: true; initial-value: #660099; }
       :root {
         /* Chromatic Alabaster – Light High-Contrast */
         --c-canvas: #f9f9f9;
@@ -623,15 +627,14 @@
         0%, 100% { background-color: var(--c-canvas); }
         50% { background-color: #f5f5f8; }
       }
-      @keyframes voidThemeShift {
-        0%, 100% { --void-bg: #0d0020; --void-text-1: #cc99ff; --void-text-2: #9966cc; --void-text-3: #663399; --void-border: #660099; }
-        50% { --void-bg: #140033; --void-text-1: #d9adff; --void-text-2: #aa77dd; --void-text-3: #7744aa; --void-border: #7a00b3; }
+      @keyframes voidBgShift {
+        0%, 100% { background-color: #0d0020; }
+        50% { background-color: #140033; }
       }
-      @property --void-bg { syntax: '<color>'; inherits: true; initial-value: #0d0020; }
-      @property --void-text-1 { syntax: '<color>'; inherits: true; initial-value: #cc99ff; }
-      @property --void-text-2 { syntax: '<color>'; inherits: true; initial-value: #9966cc; }
-      @property --void-text-3 { syntax: '<color>'; inherits: true; initial-value: #663399; }
-      @property --void-border { syntax: '<color>'; inherits: true; initial-value: #660099; }
+      @keyframes voidTextShift {
+        0%, 100% { --vt1: #cc99ff; --vt2: #9966cc; --vt3: #663399; --vb: #660099; }
+        50% { --vt1: #d9adff; --vt2: #aa77dd; --vt3: #7744aa; --vb: #7a00b3; }
+      }
       @keyframes spin {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
@@ -765,8 +768,8 @@
       .e404-sub { font-family: var(--font-mono); font-size: 11px; color: var(--c-text-3); }
 
       /* ===== VOID THEME (site-wide dark purple override) ===== */
-      .void-theme { --c-canvas: var(--void-bg); --c-surface: var(--void-bg); --c-surface-2: color-mix(in srgb, var(--void-bg), var(--void-text-3) 40%); --c-surface-3: color-mix(in srgb, var(--void-bg), var(--void-text-2) 30%); --c-elevation: color-mix(in srgb, var(--void-bg), var(--void-text-2) 35%); --c-primary: var(--void-text-1); --c-primary-container: var(--void-text-1); --c-on-primary-container: var(--void-text-2); --c-accent: var(--void-text-1); --c-accent-dim: color-mix(in srgb, transparent, var(--void-text-1) 10%); --c-accent-text: var(--void-text-1); --c-secondary: var(--void-text-1); --c-secondary-dim: color-mix(in srgb, transparent, var(--void-text-1) 12%); --c-secondary-text: var(--void-text-1); --c-tertiary: var(--void-text-2); --c-tertiary-dim: color-mix(in srgb, transparent, var(--void-text-2) 10%); --c-border: var(--void-border); --c-border-hover: color-mix(in srgb, var(--void-border), var(--void-text-1) 50%); --c-text-1: var(--void-text-1); --c-text-2: var(--void-text-2); --c-text-3: var(--void-text-3); --c-green: #66ff99; --c-amber: #ffcc66; --c-blue-link: color-mix(in srgb, var(--void-text-2), var(--void-text-1) 50%); }
-      .void-theme.layout { animation: voidThemeShift 6s ease-in-out infinite; }
+      .void-theme { --c-canvas: #0d0020; --c-surface: #0d0020; --c-surface-2: #150028; --c-surface-3: #1a0033; --c-elevation: #1a0033; --c-primary: var(--vt1); --c-primary-container: var(--vt1); --c-on-primary-container: var(--vt2); --c-accent: var(--vt1); --c-accent-dim: rgba(204, 153, 255, 0.1); --c-accent-text: var(--vt1); --c-secondary: var(--vt1); --c-secondary-dim: rgba(204, 153, 255, 0.12); --c-secondary-text: var(--vt1); --c-tertiary: var(--vt2); --c-tertiary-dim: rgba(153, 102, 204, 0.1); --c-border: var(--vb); --c-border-hover: #9900cc; --c-text-1: var(--vt1); --c-text-2: var(--vt2); --c-text-3: var(--vt3); --c-green: #66ff99; --c-amber: #ffcc66; --c-blue-link: #9966ff; }
+      .void-theme.layout { animation: voidBgShift 6s ease-in-out infinite, voidTextShift 6s ease-in-out infinite; }
       .void-theme .section-title { color: #cc99ff; }
       .void-theme .section-title .bar.magenta { background: #9900cc; }
       .void-theme .section-title .bar.cyan { background: #6633cc; }
