@@ -609,6 +609,41 @@
         animation: spin 8s linear infinite;
       }
 
+      /* ===== BACKGROUND EFFECTS ===== */
+      .grain-canvas {
+        position: fixed; inset: 0; width: 100%; height: 100%;
+        pointer-events: none; z-index: 0;
+        image-rendering: pixelated;
+        mix-blend-mode: multiply; opacity: 0.5;
+      }
+      .morph-canvas {
+        position: fixed; inset: 0; width: 100%; height: 100%;
+        pointer-events: none; z-index: 0;
+      }
+      .main { position: relative; z-index: 1; }
+
+      /* ===== MAGNETIC TABS ===== */
+      .tab-btn { transition: transform 120ms ease-out, background 120ms ease, color 120ms ease, border-color 120ms ease; }
+
+      /* ===== 3D TILT CARDS ===== */
+      .pin-card {
+        transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+        transition: transform 200ms ease-out, background 250ms ease, box-shadow 250ms ease;
+      }
+      .pin-card:hover {
+        transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translate(-3px, -3px);
+      }
+
+      /* ===== WORD REVEAL ===== */
+      .word-reveal-wrap { display: inline; }
+      .wr-word {
+        display: inline-block;
+        opacity: 0; transform: translateY(6px);
+        transition: opacity 400ms ease-out, transform 400ms ease-out, text-shadow 500ms ease-out;
+        text-shadow: 0 0 6px #a900a9, 0 0 14px #00ffff;
+      }
+      .wr-word.vis { opacity: 1; transform: translateY(0); text-shadow: none; }
+
       @media (max-width: 768px) {
         .main { padding: var(--sp-4); }
         .chat-toggle-wrap { right: 1rem; bottom: 5.5rem; }
@@ -621,7 +656,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-BDnFHh_d.js"></script>
+    <script type="module" crossorigin src="/assets/index-N-o87p9K.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CL_zjpzU.css">
   </head>
   <body>
