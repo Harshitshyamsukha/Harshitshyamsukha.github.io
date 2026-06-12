@@ -476,6 +476,21 @@
       .file-path { font-size: 10px; color: var(--c-text-3); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .file-ext { margin-left: auto; color: var(--c-text-3); font-size: 12px; }
 
+      /* ===== GITHUB ACTIVITY FEED ===== */
+      .activity-feed { display: flex; flex-direction: column; gap: 2px; }
+      .feed-loading, .feed-empty { font-family: var(--font-mono); font-size: 11px; color: var(--c-text-3); text-align: center; padding: var(--sp-6) 0; }
+      .feed-item {
+        display: flex; align-items: center; gap: var(--sp-2);
+        padding: 6px 0; text-decoration: none; color: #000000;
+        transition: all 120ms ease; border-bottom: 1px solid var(--c-surface-3);
+      }
+      .feed-item:last-child { border-bottom: none; }
+      .feed-item:hover { padding-left: 4px; color: var(--c-accent); }
+      .feed-icon { flex-shrink: 0; width: 16px; color: var(--c-text-3); display: flex; align-items: center; justify-content: center; }
+      .feed-text { font-family: var(--font-body); font-size: 12px; line-height: 1.4; flex: 1; min-width: 0; }
+      .feed-text strong { font-weight: 600; }
+      .feed-time { font-family: var(--font-mono); font-size: 10px; color: var(--c-text-3); flex-shrink: 0; }
+
       /* ===== CONTACT SOCIAL ===== */
       .contact-social { display: flex; gap: var(--sp-2); justify-content: center; margin-top: var(--sp-6); }
       .contact-social a {
@@ -752,7 +767,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-QBXhCeGT.js"></script>
+    <script type="module" crossorigin src="/assets/index-D-FxTXp1.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
