@@ -769,20 +769,20 @@ export default function App() {
   const handleResumeDownload = () => { if (window.plausible) window.plausible('Download Resume'); };
   const handleGitHubClick = () => { if (window.plausible) window.plausible('GitHub Link Click'); };
 
-  const toggleVoidTheme = () => {
-    setVoidThemeActive(v => {
-      const next = !v;
-      localStorage.setItem('voidThemeActive', String(next));
-      return next;
-    });
+  const activateVoidTheme = () => {
+    setVoidThemeActive(true);
+    localStorage.setItem('voidThemeActive', 'true');
+  };
+  const deactivateVoidTheme = () => {
+    setVoidThemeActive(false);
+    localStorage.setItem('voidThemeActive', 'false');
   };
 
   const handleTabChange = (key) => {
     if (transitionPhase !== 'idle') return;
     if (key === filterTab) {
-      if (key === 'void' && voidThemeActive) {
-        toggleVoidTheme();
-        prevTabRef.current = filterTab;
+      if (key === 'void') {
+        deactivateVoidTheme();
         setFilterTab('about');
         setShuffleKey(k => k + 1);
         setTransitionPhase('exiting');
@@ -795,7 +795,7 @@ export default function App() {
     setFilterTab(key);
     setShuffleKey(k => k + 1);
     if (key === 'void') {
-      toggleVoidTheme();
+      if (!voidThemeActive) activateVoidTheme();
       setVoidSweep(true);
       setTimeout(() => setVoidSweep(false), 800);
     }
