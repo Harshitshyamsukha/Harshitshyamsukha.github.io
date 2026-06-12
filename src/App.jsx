@@ -780,25 +780,26 @@ export default function App() {
 
   const handleTabChange = (key) => {
     if (transitionPhase !== 'idle') return;
-    if (key === filterTab) {
-      if (key === 'void') {
+    if (key === 'void') {
+      if (voidThemeActive) {
         deactivateVoidTheme();
         setFilterTab('about');
-        setShuffleKey(k => k + 1);
-        setTransitionPhase('exiting');
-        transTimerRef.current = setTimeout(() => setTransitionPhase('idle'), 350);
+      } else {
+        activateVoidTheme();
+        setFilterTab('void');
+        setVoidSweep(true);
+        setTimeout(() => setVoidSweep(false), 800);
       }
+      setShuffleKey(k => k + 1);
+      setTransitionPhase('exiting');
+      transTimerRef.current = setTimeout(() => setTransitionPhase('idle'), 350);
       return;
     }
+    if (key === filterTab) return;
     if (transTimerRef.current) clearTimeout(transTimerRef.current);
     prevTabRef.current = filterTab;
     setFilterTab(key);
     setShuffleKey(k => k + 1);
-    if (key === 'void') {
-      if (!voidThemeActive) activateVoidTheme();
-      setVoidSweep(true);
-      setTimeout(() => setVoidSweep(false), 800);
-    }
     setTransitionPhase('exiting');
     transTimerRef.current = setTimeout(() => {
       setTransitionPhase('entering');
