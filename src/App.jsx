@@ -1,9 +1,6 @@
-import React, { useEffect, useState, useRef, useMemo, lazy, Suspense } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import emailjs from '@emailjs/browser';
-
-const loadTabContent = () => import('./tabs/TabContent.jsx');
-const TabContent = lazy(loadTabContent);
-loadTabContent();
+import TabContent from './tabs/TabContent.jsx';
 
 function getLangColor(lang) {
   const colors = { JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', HTML: '#e34c26', CSS: '#563d7c', Java: '#b07219', C: '#555555', 'C++': '#f34b7d', Shell: '#89e051', Dockerfile: '#384d54' };
@@ -1219,7 +1216,6 @@ export default function App() {
           </span>
         </div>
 
-        <Suspense fallback={<div className="tab-content-wrap"><div className="masonry" style={{ opacity: 0.3 }}><p style={{ textAlign: 'center', padding: '4rem', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--c-text-3)' }}>loading...</p></div></div>}>
         <div className="tab-content-wrap" key={filterTab}>
         <TabContent
           filterTab={filterTab}
@@ -1273,7 +1269,6 @@ export default function App() {
           handleCodeReviewSubmit={handleCodeReviewSubmit}
         />
         </div>
-        </Suspense>
 
         <footer className="footer" onClick={() => { setFooterClicks(c => { const n = c + 1; if (n >= 5) { setFooterFunny(true); markEgg('footer'); } return n; }); }}>
           <p>Designed & Built by <span style={{ color: 'var(--c-accent)' }}>Harshit Shyamsukha</span></p>
