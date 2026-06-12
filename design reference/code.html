@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Harshit Shyamsukha | Portfolio.OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#848484",
+                      "primary-container": "#1b1b1b",
+                      "surface-bright": "#f9f9f9",
+                      "background": "#f9f9f9",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#a900a9",
+                      "surface-container-low": "#f3f3f3",
+                      "on-background": "#1b1b1b",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-secondary-fixed": "#380038",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#848484",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#cfc4c5",
+                      "surface-tint": "#5e5e5e",
+                      "inverse-primary": "#c6c6c6",
+                      "secondary-fixed": "#ffd7f5",
+                      "surface": "#f9f9f9",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface-variant": "#4c4546",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-primary-fixed-variant": "#474747",
+                      "tertiary": "#000000",
+                      "inverse-surface": "#303030",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1b1b1b",
+                      "surface-variant": "#e2e2e2",
+                      "primary": "#000000",
+                      "surface-dim": "#dadada",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#ffabf3",
+                      "on-secondary-container": "#500050",
+                      "secondary-container": "#fe00fe",
+                      "outline": "#7e7576",
+                      "surface-container": "#eeeeee",
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#810081"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin": "32px",
+                      "nav-width": "600px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display": [
+                              "Sora"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .chromatic-border {
+            border: 2px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        
+        .chromatic-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        }
+
+        .chromatic-glow-hover:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .skill-tag-1 { background-color: #ff00ff; color: white; }
+        .skill-tag-2 { background-color: #00ffff; color: black; }
+        .skill-tag-3 { background-color: #ffff00; color: black; }
+        .skill-tag-4 { background-color: #00ff00; color: black; }
+        .skill-tag-5 { background-color: #ff0000; color: white; }
+        .skill-tag-6 { background-color: #0000ff; color: white; }
+
+        .glitch-text-hover:hover {
+            animation: glitch 0.2s linear infinite;
+            color: #secondary;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Grid Texture -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-[-1] opacity-50 mix-blend-multiply" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLt9ApA36ucWbhsmgGB0LxDWr5EaZMy8YhHjDyGCPGzNA2rxVWsTrxUgVS309KWyh79EO76w7_bopgzoWm4zMtDPUgwGSRsuhFRL1VIthWqX9Su-whfkc-1ojYMiIYvWDGaOv-VKDCzLqhvJGMPYjdnWNj5g7qMJM9vucckzilaCw_pQSA2Cw6xY1WGGmkJJsYmapY3vg4AyH_4tMMfFh4zrzK0Fm3JM0Ww1Og2SKub-puj58IwrQ2M3uJ0N'); background-size: cover; background-position: center;"></div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[600px] rounded-full bg-surface/40 backdrop-blur-xl border border-primary dark:border-primary-fixed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] flex justify-between items-center px-6 py-3 z-50 chromatic-border">
+<div class="font-headline-md text-headline-md font-extrabold text-primary dark:text-on-primary-fixed">Portfolio.OS</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 px-3 py-1 rounded-sm scale-95 active:scale-90 transition-transform" href="#work">Work</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface dark:text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 px-3 py-1 rounded-sm scale-95 active:scale-90 transition-transform" href="#skills">Skills</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface dark:text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 px-3 py-1 rounded-sm scale-95 active:scale-90 transition-transform" href="#about">About</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface dark:text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 px-3 py-1 rounded-sm scale-95 active:scale-90 transition-transform" href="#certifications">Certifications</a>
+</div>
+<button class="font-label-md text-label-md uppercase tracking-widest bg-primary text-on-primary px-4 py-2 rounded-sm border border-primary hover:bg-secondary hover:border-secondary transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none translate-y-0 hover:translate-y-[2px] hover:translate-x-[2px] transition-all">Let's Talk</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin pt-[120px] pb-margin flex flex-col gap-[120px]">
+<!-- Hero Section -->
+<section class="min-h-[70vh] flex flex-col justify-center items-center text-center relative" id="hero">
+<div aria-hidden="true" class="absolute inset-0 z-[-1] pointer-events-none opacity-30 mix-blend-color-burn" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLt9ApA36ucWbhsmgGB0LxDWr5EaZMy8YhHjDyGCPGzNA2rxVWsTrxUgVS309KWyh79EO76w7_bopgzoWm4zMtDPUgwGSRsuhFRL1VIthWqX9Su-whfkc-1ojYMiIYvWDGaOv-VKDCzLqhvJGMPYjdnWNj5g7qMJM9vucckzilaCw_pQSA2Cw6xY1WGGmkJJsYmapY3vg4AyH_4tMMfFh4zrzK0Fm3JM0Ww1Og2SKub-puj58IwrQ2M3uJ0N'); background-size: cover; background-position: center;"></div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-6 inline-block border-b-2 border-secondary pb-1">Creative Engineer</span>
+<h1 class="font-display text-display text-primary leading-tight mb-8 relative inline-block">
+                HARSHIT<br/>SHYAMSUKHA
+                <div class="absolute -right-8 -top-8 w-16 h-16 bg-secondary-container rounded-full mix-blend-multiply blur-xl animate-pulse"></div>
+<div class="absolute -left-8 -bottom-8 w-24 h-24 bg-[#00ffff] rounded-full mix-blend-multiply blur-xl animate-pulse delay-150"></div>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] mb-12">Building digital prisms. Fusing clinical minimalism with high-voltage chromatic shocks to engineer impactful digital experiences.</p>
+<div class="flex gap-6">
+<a class="bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest px-8 py-4 border-2 border-primary chromatic-shadow hover:bg-secondary-container hover:text-on-secondary-container hover:border-secondary hover:shadow-none hover:translate-y-[6px] hover:translate-x-[6px] transition-all duration-200" href="#work">
+                    Explore Work
+                </a>
+<a class="bg-surface text-primary font-label-md text-label-md uppercase tracking-widest px-8 py-4 border-2 border-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-[4px] hover:translate-x-[4px] transition-all duration-200" href="#about">
+                    System Specs
+                </a>
+</div>
+</section>
+<!-- About Bento Grid -->
+<section class="relative" id="about">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 flex items-center gap-4">
+<span class="w-12 h-1 bg-secondary inline-block"></span>
+                System Overview
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Bio Card -->
+<div class="col-span-1 md:col-span-8 bg-surface-container-lowest p-8 border-2 border-primary chromatic-shadow chromatic-border relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ffff00]"></div>
+<div class="flex flex-col h-full justify-between relative z-10">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-4 inline-block">Identity.dat</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Bridging the gap between rigid architecture and chaotic creativity.</h3>
+<p class="font-body-md text-body-md text-on-surface mb-4">
+                                I operate at the intersection of logical engineering and visceral design. My philosophy rejects the standard "clean" light modes, opting instead for a pristine environment injected with multi-colored chromatic energy.
+                            </p>
+<p class="font-body-md text-body-md text-on-surface">
+                                I build systems that are structurally sound yet visually electric, targeting audiences who crave precision without sacrificing vibrancy.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Stats/Quick Info Vertical -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-8">
+<div class="bg-surface p-6 border-2 border-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-grow flex flex-col justify-center items-center text-center group hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-display text-primary mb-4 group-hover:text-secondary transition-colors" data-icon="terminal">terminal</span>
+<div class="font-display text-[48px] font-bold leading-none mb-2 text-primary">05+</div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Years Active</div>
+</div>
+<div class="bg-surface p-6 border-2 border-primary shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex-grow flex flex-col justify-center items-center text-center group hover:bg-[#00ffff] transition-colors">
+<span class="material-symbols-outlined text-display text-primary mb-4 group-hover:text-on-surface transition-colors" data-icon="deployed_code">deployed_code</span>
+<div class="font-display text-[48px] font-bold leading-none mb-2 text-primary">40+</div>
+<div class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Modules Deployed</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Arsenal (Skills) -->
+<section class="relative" id="skills">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 flex items-center gap-4 justify-end">
+                Technical Arsenal
+                <span class="w-12 h-1 bg-[#00ffff] inline-block"></span>
+</h2>
+<div class="bg-surface-container-lowest p-8 border-2 border-primary shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
+<div class="absolute -top-4 -left-4 bg-primary text-on-primary font-label-sm px-3 py-1 uppercase tracking-widest">Loaded Modules</div>
+<div class="flex flex-wrap gap-4 mt-4">
+<!-- High Energy Chromatic Skill Tags -->
+<div class="skill-tag-1 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">React.js</div>
+<div class="skill-tag-2 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">TypeScript</div>
+<div class="skill-tag-3 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">Node.js</div>
+<div class="skill-tag-4 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">WebGL</div>
+<div class="skill-tag-5 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">TailwindCSS</div>
+<div class="skill-tag-6 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">Figma</div>
+<div class="skill-tag-1 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">Python</div>
+<div class="skill-tag-2 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">GraphQL</div>
+<div class="skill-tag-3 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">Docker</div>
+<div class="skill-tag-4 font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">AWS</div>
+<div class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">PostgreSQL</div>
+<div class="bg-surface-tint text-on-primary font-label-md text-label-md px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider hover:translate-y-1 transition-transform cursor-crosshair">Three.js</div>
+</div>
+</div>
+</section>
+<!-- Featured Work -->
+<section class="relative" id="work">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 flex items-center gap-4">
+<span class="w-12 h-1 bg-[#ffff00] inline-block"></span>
+                Execution Outputs
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Project Card 1 -->
+<div class="group relative block bg-surface-container-lowest border-2 border-primary shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] chromatic-glow-hover flex flex-col">
+<div class="h-2 w-full bg-[#ff00ff]"></div>
+<div class="h-[240px] w-full border-b-2 border-primary relative overflow-hidden bg-surface-variant">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 scale-105 group-hover:scale-100" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtlj4-Jyo3mrMtGbuvYBtyFyxvByZmIyjzjYPYtWCBSYxCt_VNYgWKuPrTWYJDa_gUWa5tt-b7W06b254q1MrU4D4LK9EPEz5hDXBQHu1tEKTfw0R5dP_UUrxyTeV8z0gmjO1W0N5ZR9Hcdi9xMIjeq7ohnbNWLYGbYrCZzYA4jTJxkEPzL8qbPV-gaUuei359F6CP64YDLAcgQThfLKcRvdxH8wPcbojE8GIfwa7SNTJiF1Lf0TGOnBhw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-[#ff00ff] transition-colors">Neon Cortex ERP</h3>
+<span class="material-symbols-outlined text-primary" data-icon="open_in_new">open_in_new</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">A high-performance enterprise resource planning dashboard built with extreme visual contrast for rapid data digestion in high-stress environments.</p>
+<div class="flex gap-2 flex-wrap mt-auto">
+<span class="bg-surface font-label-sm px-2 py-1 border border-primary uppercase">React</span>
+<span class="bg-surface font-label-sm px-2 py-1 border border-primary uppercase">Node</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative block bg-surface-container-lowest border-2 border-primary shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] chromatic-glow-hover flex flex-col mt-0 md:mt-12">
+<div class="h-2 w-full bg-[#00ffff]"></div>
+<div class="h-[240px] w-full border-b-2 border-primary relative overflow-hidden bg-surface-variant">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 scale-105 group-hover:scale-100" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtlj4-Jyo3mrMtGbuvYBtyFyxvByZmIyjzjYPYtWCBSYxCt_VNYgWKuPrTWYJDa_gUWa5tt-b7W06b254q1MrU4D4LK9EPEz5hDXBQHu1tEKTfw0R5dP_UUrxyTeV8z0gmjO1W0N5ZR9Hcdi9xMIjeq7ohnbNWLYGbYrCZzYA4jTJxkEPzL8qbPV-gaUuei359F6CP64YDLAcgQThfLKcRvdxH8wPcbojE8GIfwa7SNTJiF1Lf0TGOnBhw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-[#00ffff] transition-colors">Prism E-Commerce</h3>
+<span class="material-symbols-outlined text-primary" data-icon="open_in_new">open_in_new</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Experimental storefront utilizing WebGL shaders to distort product imagery based on scroll velocity, creating a chaotic yet shoppable experience.</p>
+<div class="flex gap-2 flex-wrap mt-auto">
+<span class="bg-surface font-label-sm px-2 py-1 border border-primary uppercase">Three.js</span>
+<span class="bg-surface font-label-sm px-2 py-1 border border-primary uppercase">Next.js</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-surface-container-lowest dark:bg-background border-t-4 border-secondary-container flex flex-col md:flex-row justify-between items-center px-margin py-8 gap-4 relative overflow-hidden">
+<!-- Intensified Horizon Glow Background -->
+<div class="absolute inset-0 z-[0] opacity-40 pointer-events-none mix-blend-screen" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvc54UTnpEiGvgYgN1q4nxeNY1PjGuD4Z-SivApBhe1aUVJ3mispG_cCkiTXugoKrgYbvTngmcTq3m0kDUfnZQWMzY5PxADVgV1cSVQoRrM0GHehwPiDd8fSHL0ZcxfOH9yEimQ2bCKYYir7TOdxVPvJ37XMVkWBeHcV9aqpnQhtv8ipX0DLt9XsFK6RC4XuQ_hrJpZzbtjYD2uemxRTz-w_wtxWuFenBnMxa5unXHvSaen8DH8PH9tjpqX'); background-size: cover; background-position: bottom; filter: hue-rotate(90deg) saturate(200%);"></div>
+<div class="font-headline-md text-headline-md text-primary relative z-10 glitch-text-hover cursor-default">Portfolio.OS</div>
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant relative z-10 tracking-widest bg-surface/80 px-4 py-2 border border-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            © 2024 PORTFOLIO.OS — ENGINEERED FOR IMPACT
+        </div>
+<div class="flex gap-6 relative z-10">
+<a class="font-label-sm text-label-sm uppercase text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 bg-surface/80 px-2 py-1 border border-transparent hover:border-primary" href="#">Github</a>
+<a class="font-label-sm text-label-sm uppercase text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 bg-surface/80 px-2 py-1 border border-transparent hover:border-primary" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 bg-surface/80 px-2 py-1 border border-transparent hover:border-primary" href="#">Source</a>
+<a class="font-label-sm text-label-sm uppercase text-on-tertiary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100 bg-surface/80 px-2 py-1 border border-transparent hover:border-primary" href="#">Privacy</a>
+</div>
+</footer>
+</body></html>
