@@ -443,16 +443,29 @@
       .contact-btn:hover { background: var(--c-secondary); border-color: var(--c-secondary); }
 
       /* ===== CHAT WIDGET ===== */
-      .chat-toggle {
+      .chat-toggle-wrap {
         position: fixed; bottom: 6.5rem; right: 2rem; z-index: 100;
+      }
+      .chat-toggle {
         width: 52px; height: 52px;
-        background: #000000; color: #ffffff;
+        background: #ffffff; color: #000000;
         border: 2px solid #000000; cursor: pointer; display: flex;
         align-items: center; justify-content: center;
         box-shadow: 4px 4px 0px 0px #000000;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease; position: relative;
       }
-      .chat-toggle:hover { box-shadow: 8px 8px 0px 0px #000000; transform: translate(-3px, -3px); }
+      .chat-toggle::before {
+        content: ''; position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: 4px;
+        background: linear-gradient(90deg, #b300b3, #00b3b3, #b3b300, #b300b3);
+        pointer-events: none; z-index: 1;
+      }
+      .chat-toggle:hover {
+        background: #000000; color: #ffffff;
+        box-shadow: 5px 5px 0px 0px #b300b3, 10px 10px 0px 0px #00b3b3, 15px 15px 0px 0px #b3b300;
+        transform: translate(-3px, -3px);
+      }
+      .chat-toggle svg { transition: all 0.3s ease; }
+      .chat-toggle:hover svg { color: #ffffff; }
       #chat-bubble {
         position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
         width: 340px; border: 2px solid #000000;
@@ -515,7 +528,8 @@
 
       @media (max-width: 768px) {
         .main { padding: var(--sp-4); }
-        .chat-toggle { right: 1rem; bottom: 5.5rem; width: 48px; height: 48px; }
+        .chat-toggle-wrap { right: 1rem; bottom: 5.5rem; }
+        .chat-toggle { width: 48px; height: 48px; }
         #chat-bubble { width: calc(100vw - 2rem); right: 1rem; bottom: 1rem; }
         .back-to-top { bottom: 1rem; right: 1rem; width: 36px; height: 36px; }
         .modal-shell { grid-template-columns: 1fr; max-height: 90vh; }
@@ -524,7 +538,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-CghOx5dB.js"></script>
+    <script type="module" crossorigin src="/assets/index-BcOWLAQm.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-But27d4w.css">
   </head>
   <body>
