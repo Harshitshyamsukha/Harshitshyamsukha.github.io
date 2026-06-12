@@ -1150,8 +1150,8 @@
       .void-theme .loading-bar-title { color: #cc99ff; }
       .loading-bar-track { height: 12px; background: #eee; border: 2px solid #000000; overflow: hidden; }
       .void-theme .loading-bar-track { background: #0d0020; border-color: #660099; }
-      .loading-bar-fill { height: 100%; width: 30%; background: #a900a9; animation: loadingStuck 2s ease-in-out infinite; }
-      @keyframes loadingStuck { 0% { width: 20%; margin-left: 0; } 50% { width: 40%; margin-left: 30%; } 100% { width: 20%; margin-left: 60%; } }
+      .loading-bar-fill { height: 100%; width: 0%; background: #a900a9; animation: loadingFill 7.5s ease-in-out forwards; }
+      @keyframes loadingFill { to { width: 100%; } }
       .loading-bar-sub { font-family: var(--font-mono); font-size: 10px; margin-top: var(--sp-3); color: var(--c-text-3); }
 
       /* Idle notification */
