@@ -702,20 +702,14 @@
 
       /* ===== KONAMI EASTER EGG ===== */
       .konami-glitch {
-        animation: chromaticGlitch 1.2s ease-out;
+        animation: easterEggExit 1s ease-in forwards;
+        transform-origin: center top;
       }
-      @keyframes chromaticGlitch {
-        0% { filter: none; }
-        5% { filter: hue-rotate(90deg) contrast(2); transform: translate(3px, 0); }
-        10% { filter: hue-rotate(180deg) contrast(3); transform: translate(-3px, 0); }
-        15% { filter: hue-rotate(270deg) contrast(2); transform: translate(2px, 0); }
-        20% { filter: hue-rotate(360deg) contrast(1.5); transform: translate(-2px, 0); }
-        25% { filter: hue-rotate(0deg) contrast(1); transform: translate(0); }
-        30% { filter: saturate(3); }
-        40% { filter: saturate(1); }
-        50% { filter: hue-rotate(60deg); }
-        60% { filter: none; }
-        100% { filter: none; }
+      @keyframes easterEggExit {
+        0% { transform: rotate(0deg) translateY(0); opacity: 1; }
+        20% { transform: rotate(2deg) translateY(0); opacity: 1; }
+        50% { transform: rotate(4deg) translateY(30vh); opacity: 0.6; }
+        100% { transform: rotate(6deg) translateY(100vh); opacity: 0; }
       }
 
       @media (max-width: 768px) {
@@ -730,8 +724,8 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-DJVFXaHR.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CL_zjpzU.css">
+    <script type="module" crossorigin src="/assets/index-JmdOkSDK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
     <div id="root"></div>
