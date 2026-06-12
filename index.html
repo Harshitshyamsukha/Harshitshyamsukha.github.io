@@ -644,6 +644,77 @@
       }
       .wr-word.vis { opacity: 1; transform: translateY(0); text-shadow: none; }
 
+      /* ===== TAB MORPH TRANSITION ===== */
+      .tab-content-wrap {
+        animation: tabSlideIn 350ms ease-out;
+      }
+      @keyframes tabSlideIn {
+        from { opacity: 0; transform: translateY(16px) scaleY(0.96); }
+        to { opacity: 1; transform: translateY(0) scaleY(1); }
+      }
+
+      /* ===== LAYERED PAPER STACK ===== */
+      .about-card {
+        position: relative;
+        box-shadow: 3px 3px 0px 0px #000000, 5px 5px 0px 0px var(--c-surface-3);
+        transition: all 200ms ease;
+        background: #ffffff;
+      }
+      .about-card::after {
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        border: 2px solid #000000; background: var(--c-surface-2);
+        z-index: -2; pointer-events: none;
+        transform: rotate(0.4deg) translate(4px, 5px);
+        transition: all 200ms ease;
+      }
+      .about-card:hover::after {
+        transform: rotate(1deg) translate(10px, 12px);
+      }
+      .about-card:hover {
+        transform: translate(-3px, -3px);
+        background: #000000;
+        box-shadow: 4px 4px 0px 0px #b300b3, 6px 6px 0px 0px var(--c-surface-3), 8px 8px 0px 0px #00b3b3, 12px 12px 0px 0px #b3b300;
+      }
+
+      /* ===== KINETIC TYPOGRAPHY ===== */
+      .kinetic-text { display: inline; }
+      .kt-char {
+        display: inline-block;
+        animation: kineticFloat 3s ease-in-out infinite;
+      }
+      @keyframes kineticFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+
+      /* ===== DYNAMIC GRID DENSITY ===== */
+      .masonry.density-3 { columns: 3; }
+      .masonry.density-4 { columns: 4; }
+      .masonry.density-5 { columns: 5; }
+      @media (max-width: 1024px) { .masonry.density-3, .masonry.density-4, .masonry.density-5 { columns: 2; } }
+      @media (max-width: 768px) { .masonry.density-3, .masonry.density-4, .masonry.density-5 { columns: 1; } }
+
+      /* ===== BUILD TIMESTAMP ===== */
+      .build-time { font-family: var(--font-mono); font-size: 10px; color: var(--c-text-3); margin-top: 2px; opacity: 0.6; }
+
+      /* ===== KONAMI EASTER EGG ===== */
+      .konami-glitch {
+        animation: chromaticGlitch 1.2s ease-out;
+      }
+      @keyframes chromaticGlitch {
+        0% { filter: none; }
+        5% { filter: hue-rotate(90deg) contrast(2); transform: translate(3px, 0); }
+        10% { filter: hue-rotate(180deg) contrast(3); transform: translate(-3px, 0); }
+        15% { filter: hue-rotate(270deg) contrast(2); transform: translate(2px, 0); }
+        20% { filter: hue-rotate(360deg) contrast(1.5); transform: translate(-2px, 0); }
+        25% { filter: hue-rotate(0deg) contrast(1); transform: translate(0); }
+        30% { filter: saturate(3); }
+        40% { filter: saturate(1); }
+        50% { filter: hue-rotate(60deg); }
+        60% { filter: none; }
+        100% { filter: none; }
+      }
+
       @media (max-width: 768px) {
         .main { padding: var(--sp-4); }
         .chat-toggle-wrap { right: 1rem; bottom: 5.5rem; }
@@ -656,7 +727,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-yx357UyS.js"></script>
+    <script type="module" crossorigin src="/assets/index-BVjxdH6J.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CL_zjpzU.css">
   </head>
   <body>
