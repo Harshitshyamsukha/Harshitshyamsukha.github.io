@@ -778,7 +778,18 @@ export default function App() {
   };
 
   const handleTabChange = (key) => {
-    if (key === filterTab || transitionPhase !== 'idle') return;
+    if (transitionPhase !== 'idle') return;
+    if (key === filterTab) {
+      if (key === 'void' && voidThemeActive) {
+        toggleVoidTheme();
+        prevTabRef.current = filterTab;
+        setFilterTab('about');
+        setShuffleKey(k => k + 1);
+        setTransitionPhase('exiting');
+        transTimerRef.current = setTimeout(() => setTransitionPhase('idle'), 350);
+      }
+      return;
+    }
     if (transTimerRef.current) clearTimeout(transTimerRef.current);
     prevTabRef.current = filterTab;
     setFilterTab(key);
