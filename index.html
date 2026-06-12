@@ -755,14 +755,52 @@
       .e404-msg { font-family: var(--font-mono); font-size: 14px; text-transform: uppercase; letter-spacing: 0.15em; }
       .e404-sub { font-family: var(--font-mono); font-size: 11px; color: var(--c-text-3); }
 
-      /* ===== VOID SWEEP ===== */
-      .void-sweep { position: fixed; inset: 0; z-index: 99999; pointer-events: none; opacity: 0; background: #000000; }
-      .void-sweep.active { animation: voidSweep 500ms ease-out forwards; }
-      @keyframes voidSweep {
-        0% { opacity: 0; clip-path: inset(0 50% 0 50%); }
-        20% { opacity: 1; clip-path: inset(0 0% 0 0%); }
-        80% { opacity: 1; clip-path: inset(0 0% 0 0%); }
-        100% { opacity: 0; clip-path: inset(0 50% 0 50%); }
+      /* ===== VOID SWEEP (cracks from center) ===== */
+      .void-sweep {
+        position: fixed; inset: 0; z-index: 99999; pointer-events: none;
+        background: transparent; overflow: hidden;
+      }
+      .void-sweep.active { animation: voidDarken 800ms ease-out forwards; }
+      @keyframes voidDarken {
+        0% { background: transparent; }
+        50% { background: rgba(0,0,0,0.9); }
+        100% { background: transparent; }
+      }
+      .void-sweep .crack-line {
+        position: absolute; top: 50%; left: 50%; width: 0; height: 2px;
+        background: linear-gradient(90deg, #9900cc, transparent);
+        transform-origin: left center;
+        opacity: 0;
+      }
+      .void-sweep.active .crack-line { animation: crackShoot 500ms ease-out forwards; }
+      .void-sweep.active .crack-line:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg); animation-delay: 0ms; }
+      .void-sweep.active .crack-line:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg); animation-delay: 50ms; }
+      .void-sweep.active .crack-line:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg); animation-delay: 100ms; }
+      .void-sweep.active .crack-line:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg); animation-delay: 50ms; }
+      .void-sweep.active .crack-line:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg); animation-delay: 0ms; }
+      .void-sweep.active .crack-line:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg); animation-delay: 100ms; }
+      .void-sweep.active .crack-line:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg); animation-delay: 50ms; }
+      .void-sweep.active .crack-line:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg); animation-delay: 100ms; }
+      .void-sweep.active .crack-line:nth-child(9) { transform: translate(-50%, -50%) rotate(22.5deg); animation-delay: 80ms; }
+      .void-sweep.active .crack-line:nth-child(10) { transform: translate(-50%, -50%) rotate(67.5deg); animation-delay: 30ms; }
+      .void-sweep.active .crack-line:nth-child(11) { transform: translate(-50%, -50%) rotate(112.5deg); animation-delay: 70ms; }
+      .void-sweep.active .crack-line:nth-child(12) { transform: translate(-50%, -50%) rotate(157.5deg); animation-delay: 40ms; }
+      @keyframes crackShoot {
+        0% { width: 0%; opacity: 1; }
+        60% { width: 80%; opacity: 1; }
+        100% { width: 100%; opacity: 0; }
+      }
+      .void-sweep .crack-center {
+        position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, #660099, transparent);
+        opacity: 0;
+      }
+      .void-sweep.active .crack-center { animation: centerBurst 600ms ease-out forwards; }
+      @keyframes centerBurst {
+        0% { width: 0; height: 0; opacity: 1; }
+        50% { width: 60%; height: 60%; opacity: 0.6; }
+        100% { width: 100%; height: 100%; opacity: 0; }
       }
 
       /* ===== VOID BLEED ===== */
@@ -824,7 +862,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-Bjf90Giw.js"></script>
+    <script type="module" crossorigin src="/assets/index-Op4uzHIB.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
