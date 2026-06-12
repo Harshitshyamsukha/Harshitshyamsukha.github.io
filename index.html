@@ -667,14 +667,13 @@
       }
       .about-card::after {
         content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        border: 2px solid #000000; background: var(--chroma-1);
-        opacity: 0.25;
+        border: 2px solid #000000; background: #d4d4d4;
         z-index: -2; pointer-events: none;
         transform: rotate(0.4deg) translate(4px, 5px);
         transition: all 200ms ease;
       }
       .about-card:hover::after {
-        background: var(--chroma-1); opacity: 1; border-color: #b300b3;
+        background: #3a3a3a; border-color: #555;
         transform: rotate(1deg) translate(10px, 12px);
       }
       .about-card:hover {
