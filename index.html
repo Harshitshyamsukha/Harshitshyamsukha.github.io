@@ -755,6 +755,63 @@
       .e404-msg { font-family: var(--font-mono); font-size: 14px; text-transform: uppercase; letter-spacing: 0.15em; }
       .e404-sub { font-family: var(--font-mono); font-size: 11px; color: var(--c-text-3); }
 
+      /* ===== VOID SWEEP ===== */
+      .void-sweep { position: fixed; inset: 0; z-index: 99999; pointer-events: none; opacity: 0; background: #000000; }
+      .void-sweep.active { animation: voidSweep 500ms ease-out forwards; }
+      @keyframes voidSweep {
+        0% { opacity: 0; clip-path: inset(0 50% 0 50%); }
+        20% { opacity: 1; clip-path: inset(0 0% 0 0%); }
+        80% { opacity: 1; clip-path: inset(0 0% 0 0%); }
+        100% { opacity: 0; clip-path: inset(0 50% 0 50%); }
+      }
+
+      /* ===== VOID BLEED ===== */
+      .void-bleed { position: fixed; inset: 0; z-index: 99998; pointer-events: none; }
+      .void-bleed.active { animation: voidBleedFlash 300ms ease-out; }
+      @keyframes voidBleedFlash {
+        0% { background: radial-gradient(ellipse at var(--bleed-x, 50%) var(--bleed-y, 50%), rgba(80,0,120,0.25), transparent 60%); opacity: 1; }
+        30% { background: radial-gradient(ellipse at var(--bleed-x, 50%) var(--bleed-y, 50%), rgba(80,0,120,0.4), transparent 50%); opacity: 1; }
+        60% { background: radial-gradient(ellipse at var(--bleed-x, 50%) var(--bleed-y, 50%), rgba(80,0,120,0.2), transparent 60%); opacity: 0.6; }
+        100% { opacity: 0; }
+      }
+
+      /* ===== STATIC POP ===== */
+      .static-pop { position: fixed; inset: 0; z-index: 99997; pointer-events: none; opacity: 0; }
+      .static-pop.active { opacity: 1; animation: staticFade 400ms ease-out forwards; }
+      .static-inner { width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 4px); background-size: 100% 4px; animation: staticShift 80ms linear infinite; }
+      @keyframes staticShift { 0% { transform: translateY(0); } 100% { transform: translateY(-4px); } }
+      @keyframes staticFade { 0% { opacity: 1; } 70% { opacity: 0.8; } 100% { opacity: 0; } }
+
+      /* ===== SHADOW DOUBLE ===== */
+      .pin-card .shadow-double {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: #1a0033; border: 2px solid #660099;
+        z-index: -1; pointer-events: none;
+        transform: rotate(2deg) translate(6px, 8px);
+        transition: all 250ms ease; opacity: 0;
+        box-shadow: 0 0 20px rgba(102,0,153,0.3);
+      }
+      .pin-card:hover .shadow-double {
+        opacity: 1; transform: rotate(4deg) translate(12px, 16px);
+        transition-duration: 100ms;
+      }
+
+      /* ===== CORRUPTION TRAIL ===== */
+      .corruption-canvas { position: fixed; inset: 0; z-index: 99996; pointer-events: none; }
+
+      /* ===== VOID TAB ===== */
+      .void-mode .pin-card { background: #0d0020 !important; border-color: #660099 !important; color: #cc99ff !important; box-shadow: 4px 4px 0px 0px #660099 !important; }
+      .void-mode .pin-card:hover { background: #1a0033 !important; box-shadow: 5px 5px 0px 0px #9900cc, 10px 10px 0px 0px #660099, 15px 15px 0px 0px #330066 !important; }
+      .void-mode .pin-card .pin-title { color: #cc99ff !important; }
+      .void-mode .pin-card .pin-desc { color: #9966cc !important; }
+      .void-mode .pin-card .pin-icon { border-color: #660099 !important; color: #cc99ff !important; background: transparent !important; }
+      .void-mode .pin-card .pin-category { border-color: #660099 !important; color: #cc99ff !important; background: transparent !important; }
+      .void-mode .pin-card .pin-tag { border-color: #660099 !important; color: #9966cc !important; background: transparent !important; }
+      .void-mode .pin-card .pin-meta { border-color: #660099 !important; }
+      .void-mode .pin-card .pin-status { border-color: #660099 !important; }
+      .void-mode .pin-card::before { background: linear-gradient(90deg, #330066, #660099, #9900cc, #330066) !important; }
+      .void-mode .pin-card .shadow-double { display: block; opacity: 0.6; }
+
       @media (max-width: 768px) {
         .main { padding: var(--sp-4); }
         .chat-toggle-wrap { right: 1rem; bottom: 5.5rem; }
@@ -767,7 +824,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-D-FxTXp1.js"></script>
+    <script type="module" crossorigin src="/assets/index-Bjf90Giw.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
