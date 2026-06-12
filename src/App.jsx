@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef, useMemo, lazy, Suspense } from 'react';
 import emailjs from '@emailjs/browser';
 
-const TabContent = lazy(() => import('./tabs/TabContent.jsx'));
+const loadTabContent = () => import('./tabs/TabContent.jsx');
+const TabContent = lazy(loadTabContent);
+loadTabContent();
 
 function getLangColor(lang) {
   const colors = { JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5', HTML: '#e34c26', CSS: '#563d7c', Java: '#b07219', C: '#555555', 'C++': '#f34b7d', Shell: '#89e051', Dockerfile: '#384d54' };
