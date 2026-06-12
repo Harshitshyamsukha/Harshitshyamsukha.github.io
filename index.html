@@ -850,6 +850,33 @@
       .void-mode .pin-card::before { background: linear-gradient(90deg, #330066, #660099, #9900cc, #330066) !important; }
       .void-mode .pin-card .shadow-double { display: block; opacity: 0.6; }
 
+      /* ===== VOID CARD (random one among normal pins) ===== */
+      .pin-card.void-card { background: #0d0020 !important; border-color: #660099 !important; box-shadow: 4px 4px 0px 0px #660099 !important; animation: voidPulse 2s ease-in-out infinite; }
+      .pin-card.void-card .pin-title { color: #cc99ff !important; }
+      .pin-card.void-card .pin-desc { color: #660099 !important; }
+      .pin-card.void-card .pin-icon { border-color: #660099 !important; color: #9900cc !important; }
+      .pin-card.void-card .pin-category { border-color: #660099 !important; color: #9900cc !important; background: transparent !important; }
+      .pin-card.void-card .pin-meta { opacity: 0.4; }
+      .pin-card.void-card .shadow-double { opacity: 1 !important; transform: rotate(3deg) translate(8px, 10px) !important; background: #1a0033; box-shadow: 0 0 30px rgba(102,0,153,0.5) !important; }
+      .pin-card.void-card:hover,
+      .pin-card.void-card.void-revealed { background: #ffffff !important; border-color: #000000 !important; box-shadow: 4px 4px 0px 0px #000000 !important; animation: none; }
+      .pin-card.void-card:hover .pin-title,
+      .pin-card.void-card.void-revealed .pin-title { color: #000000 !important; }
+      .pin-card.void-card:hover .pin-desc,
+      .pin-card.void-card.void-revealed .pin-desc { color: var(--c-text-2) !important; }
+      .pin-card.void-card:hover .pin-icon,
+      .pin-card.void-card.void-revealed .pin-icon { border-color: #000000 !important; color: #000000 !important; }
+      .pin-card.void-card:hover .pin-category,
+      .pin-card.void-card.void-revealed .pin-category { border-color: #000000 !important; color: #000000 !important; }
+      .pin-card.void-card:hover .pin-meta,
+      .pin-card.void-card.void-revealed .pin-meta { opacity: 1; }
+      .pin-card.void-card:hover .shadow-double,
+      .pin-card.void-card.void-revealed .shadow-double { opacity: 0 !important; }
+      @keyframes voidPulse {
+        0%, 100% { box-shadow: 4px 4px 0px 0px #660099, 0 0 10px rgba(102,0,153,0.2); }
+        50% { box-shadow: 4px 4px 0px 0px #9900cc, 0 0 20px rgba(153,0,204,0.4); }
+      }
+
       @media (max-width: 768px) {
         .main { padding: var(--sp-4); }
         .chat-toggle-wrap { right: 1rem; bottom: 5.5rem; }
@@ -862,7 +889,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-Op4uzHIB.js"></script>
+    <script type="module" crossorigin src="/assets/index-j_ZUrY_N.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
