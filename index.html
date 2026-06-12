@@ -701,34 +701,31 @@
       .build-time:hover .konami-hint { opacity: 0.4; }
 
       /* ===== KONAMI EASTER EGG ===== */
-      .konami-slide .main > * {
-        animation: tableSlide 500ms ease-in forwards;
-        transform-origin: top center;
-      }
-      .konami-slide .main > *:nth-child(1) { animation-delay: 0ms; }
-      .konami-slide .main > *:nth-child(2) { animation-delay: 60ms; }
-      .konami-slide .main > *:nth-child(3) { animation-delay: 120ms; }
-      .konami-slide .main > *:nth-child(4) { animation-delay: 180ms; }
-      .konami-slide .main > *:nth-child(5) { animation-delay: 240ms; }
-      .konami-slide .main > *:nth-child(6) { animation-delay: 300ms; }
-      .konami-slide .main > *:nth-child(7) { animation-delay: 360ms; }
-      .konami-slide .main > *:nth-child(8) { animation-delay: 420ms; }
-      .konami-slide .chat-toggle-wrap,
-      .konami-slide #chat-bubble,
-      .konami-slide .back-to-top { animation: tableSlide 500ms ease-in forwards; animation-delay: 480ms; }
-      @keyframes tableSlide {
-        0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
-        100% { transform: translateX(var(--slide-x, -80px)) translateY(120px) rotate(var(--slide-r, -8deg)); opacity: 0; }
-      }
-      .konami-slide .main > *:nth-child(even) { --slide-x: 100px; --slide-r: 10deg; }
-      .konami-slide .main > *:nth-child(odd) { --slide-x: -80px; --slide-r: -8deg; }
-
       .konami-tilt {
-        animation: pageTiltBack 400ms ease-in forwards;
+        transform-origin: center top;
+        animation: pageTilt 350ms ease-out forwards;
       }
-      @keyframes pageTiltBack {
-        0% { transform: rotate(0deg) scale(1); }
-        100% { transform: rotate(12deg) scale(0.95); transform-origin: center top; }
+      @keyframes pageTilt {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(8deg); }
+      }
+
+      .slide .main > * {
+        animation: fallOff 500ms ease-in forwards;
+      }
+      .slide .main > *:nth-child(1) { animation-delay: 0ms; }
+      .slide .main > *:nth-child(2) { animation-delay: 80ms; }
+      .slide .main > *:nth-child(3) { animation-delay: 160ms; }
+      .slide .chat-toggle-wrap,
+      .slide #chat-bubble,
+      .slide .back-to-top,
+      .slide .modal-overlay { animation: fallOff 500ms ease-in forwards; animation-delay: 300ms; }
+      .slide .grain-canvas,
+      .slide .morph-canvas { animation: fadeOut 300ms ease-in forwards; animation-delay: 200ms; }
+      @keyframes fadeOut { to { opacity: 0; } }
+      @keyframes fallOff {
+        0% { transform: translateX(0) translateY(0); opacity: 1; }
+        100% { transform: translateX(120px) translateY(200px); opacity: 0; }
       }
 
       .easter-404 {
@@ -754,7 +751,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-D5bGPLYj.js"></script>
+    <script type="module" crossorigin src="/assets/index-Bijz8C2R.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
