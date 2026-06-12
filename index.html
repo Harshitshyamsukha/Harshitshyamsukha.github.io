@@ -103,7 +103,7 @@
       ::-webkit-scrollbar-track { background: var(--c-canvas); }
       ::-webkit-scrollbar-thumb { background: #000000; }
 
-      .layout { min-height: 100vh; position: relative; animation: bgShift 30s ease-in-out infinite; }
+      .layout { min-height: 100vh; position: relative; animation: bgShift 30s ease-in-out infinite; transition: background-color 350ms ease, color 350ms ease; }
       .chromatic-shadow { box-shadow: 4px 4px 0px 0px #000000; }
       .chromatic-border {
         border: 2px solid transparent;
@@ -757,6 +757,7 @@
 
       /* ===== VOID THEME (site-wide dark purple override) ===== */
       .void-theme { --c-canvas: #0d0020; --c-surface: #0d0020; --c-surface-2: #150028; --c-surface-3: #1a0033; --c-elevation: #1a0033; --c-primary: #cc99ff; --c-primary-container: #cc99ff; --c-on-primary-container: #9966cc; --c-accent: #cc99ff; --c-accent-dim: rgba(204, 153, 255, 0.1); --c-accent-text: #cc99ff; --c-secondary: #cc99ff; --c-secondary-dim: rgba(204, 153, 255, 0.12); --c-secondary-text: #cc99ff; --c-tertiary: #9966cc; --c-tertiary-dim: rgba(153, 102, 204, 0.1); --c-border: #660099; --c-border-hover: #9900cc; --c-text-1: #cc99ff; --c-text-2: #9966cc; --c-text-3: #663399; --c-green: #66ff99; --c-amber: #ffcc66; --c-blue-link: #9966ff; }
+      .void-theme.layout { animation: none; background-color: #0d0020; }
       .void-theme .section-title { color: #cc99ff; }
       .void-theme .section-title .bar.magenta { background: #9900cc; }
       .void-theme .section-title .bar.cyan { background: #6633cc; }
@@ -1067,7 +1068,7 @@
         .masonry { columns: 1; }
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-Cqpc_h6E.js"></script>
+    <script type="module" crossorigin src="/assets/index-CC8Ypw8a.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BGvN5Knz.css">
   </head>
   <body>
